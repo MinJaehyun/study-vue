@@ -7,11 +7,12 @@
     * pages 폴더 추가하기
     
 ### 5월 17일
-    1. eslint, prettier 설정하기
-        - 내 블로그 정리한 내용 참고하기
+    1. [v] 환경 설정 
+        - eslint, prettier 설정
     2. 개인 프로젝트 진행하기
         - todolist
     3. typescript 관련 내용 학습하기
-        - 핸드북만으로 가능한가?
+        - 핸드북 참고하기
         - typescript 관련 내용 검색하기
-
+    4. [v] source tree 사용법 숙지
+        - add, commit, push, branch, merge
