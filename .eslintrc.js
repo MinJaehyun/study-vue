@@ -24,6 +24,13 @@ module.exports = {
         trailingComma: 'all',
         bracketSpacing: true,
         arrowParens: 'avoid',
+        endOfLine: 'auto',
+        'vue/multi-word-component-names': [
+          'error',
+          {
+            ignores: ['default', 'Login'],
+          },
+        ],
       },
     ],
   },
