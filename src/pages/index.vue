@@ -1,13 +1,9 @@
-<template>
-$END$
-</template>
+<template></template>
 
 <script>
 export default {
-name: "index"
-}
+  name: 'index.vue',
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
