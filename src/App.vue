@@ -1,24 +1,24 @@
 <template>
-  <HelloWorld msg="Vue.js + TypeScript todoList App" />
+  <TodoList />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import TodoList from '@/components/TodoList.vue';
 
 export default defineComponent({
   name: 'App',
-  created() {
-    console.log('hi');
-    this.testString();
-  },
-  methods: {
-    testString() {
-      let str: string = 'hi';
-    },
-  },
+  // created(): void {
+  //   console.log('hi');
+  //   this.testString();
+  // },
+  // methods: {
+  //   testString() {
+  //     let obj: any = { x: 0 };
+  //   },
+  // },
   components: {
-    HelloWorld,
+    TodoList,
   },
 });
 </script>
