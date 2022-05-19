@@ -1,13 +1,12 @@
 <template>
-$END$
+  <div></div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-name: "Todo.vue"
-}
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Todo.vue',
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
