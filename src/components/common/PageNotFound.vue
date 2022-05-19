@@ -1,13 +1,11 @@
 <template>
-
+  <div>404 page</div>
 </template>
 
 <script>
 export default {
-  name: 'Error.vue',
-}
+  name: 'PageNotFound.vue',
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
