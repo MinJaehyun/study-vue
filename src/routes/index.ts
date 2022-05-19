@@ -2,14 +2,13 @@
 import { createWebHistory, createRouter, RouterOptions } from 'vue-router';
 import TodoList from '@/pages/TodoList.vue';
 import PageNotFound from '@/pages/PageNotFound.vue';
+import TodoInput from '@/pages/TodoInputPage.vue';
 
 // routes 설정
 const routes = [
   {
-    // path: '/',
-    // redirect: '/main',
-    // component: MainPage,
-    // component: () => import('@/pages/MainPage'),
+    path: '/todoinput',
+    component: TodoInput,
   },
   {
     path: '/todolist',
