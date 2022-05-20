@@ -1,9 +1,13 @@
 <template>
-  <TodoInput
-    :item="todoText"
-    @inputValue="inputValue"
-    @addToStorage="addToStorage"
-  />
+  <div>
+    <h1>ToDoList</h1>
+    <TodoInput :todoText="todoText" @inputValue="inputValue" />
+    <div v-for="todo in todos" :key="todo.id">
+      <ul>
+        <li>{{ todo.text }}</li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -17,24 +21,14 @@ export default defineComponent({
   },
   data() {
     return {
-      todoText: 'abc',
+      todoText: '',
+      todos: [],
     };
   },
   methods: {
     inputValue(value: string) {
-      console.log('value : ', value);
-      this.todoText = value;
-    },
-    addToStorage() {
-      // storage 에 저장하는 방법?
-      // console.log('test');
-      const value = this.todoText;
-      // console.log('addtostorageValue :', value);
-      localStorage.setItem('value', value);
-      this.initTodoText();
-    },
-    initTodoText() {
-      this.todoText = '';
+      // console.log('value : ', value);
+      this.todos.push({ text: value });
     },
   },
 });
