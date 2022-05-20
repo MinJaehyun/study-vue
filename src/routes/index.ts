@@ -3,9 +3,15 @@ import { createWebHistory, createRouter, RouterOptions } from 'vue-router';
 import TodoList from '@/pages/TodoList.vue';
 import PageNotFound from '@/pages/PageNotFound.vue';
 import TodoInput from '@/pages/TodoInputPage.vue';
+import TodoPage from '@/pages/TodoPage.vue';
 
 // routes 설정
 const routes = [
+  {
+    path: '/todo/:id',
+    name: 'todo',
+    component: TodoPage,
+  },
   {
     path: '/todoinput',
     component: TodoInput,
