@@ -5,7 +5,7 @@
     * 컨벤션 맞추기: 카멜케이스
 
 ### 5월 21일
-    1. array methods - reduce 학습
+    1. array methods - reduce, filter 학습
 
 ### 5월 20일
     1. 프로젝트에 object 사용하기

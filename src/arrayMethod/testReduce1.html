@@ -39,11 +39,14 @@
 
     // 3. 목표: name 의 길이가 3 인 사람만을 나타내라.
     let result3 = userList.reduce((prev, cur) => {
-        cur.name.length === 3 ? prev.push(cur.name) : ''
+        cur.name.length === 3 ? prev.push(cur.name) : null
         return prev
     }, [])
 
     console.log('result#', result3);
+
+    // function
+    const result4 = userList.reduce(function(prev,cur) {});
 </script>
 </body>
 </html>
