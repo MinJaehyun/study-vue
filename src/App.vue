@@ -1,25 +1,12 @@
 <template>
-  <TodoList />
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TodoList from '@/components/TodoList.vue';
 
 export default defineComponent({
   name: 'App',
-  // created(): void {
-  //   console.log('hi');
-  //   this.testString();
-  // },
-  // methods: {
-  //   testString() {
-  //     let obj: any = { x: 0 };
-  //   },
-  // },
-  components: {
-    TodoList,
-  },
 });
 </script>
 <style>

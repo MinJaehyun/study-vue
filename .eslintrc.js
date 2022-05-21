@@ -14,6 +14,12 @@ module.exports = {
     // "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     // "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     'no-console': 'off',
+    'vue/multi-word-component-names': [
+      'error',
+      {
+        ignores: ['default', 'Todo'],
+      },
+    ],
     'prettier/prettier': [
       'error',
       {
@@ -25,12 +31,6 @@ module.exports = {
         bracketSpacing: true,
         arrowParens: 'avoid',
         endOfLine: 'auto',
-        'vue/multi-word-component-names': [
-          'error',
-          {
-            ignores: ['default', 'Login'],
-          },
-        ],
       },
     ],
   },
