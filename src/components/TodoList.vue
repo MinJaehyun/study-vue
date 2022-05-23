@@ -25,6 +25,8 @@
       <p><button @click="cleanToDo">체크한 내용 삭제</button></p>
       <p>{{ remaining }} / {{ todos.length }}건 처리</p>
     </div>
+    <slot name="icon">(C)</slot>
+    <slot name="text">Tomato</slot>
   </div>
 </template>
 

@@ -3,6 +3,34 @@
 ## todoList project 주의 사항
     * 진행 상황 슬랙에 공유하기
     * 컨벤션 맞추기: 카멜케이스
+    * 이번 주(23~29): 책 내용 만들고 -> Nuxt 로 변경하기
+    * 다음 주(30~5/5): 잡 조금씩 들어온다.
+    * 문서는 공식문서 또는 권위있는 블로그로만 보기(필)
+    * JS, TypeScript 조금씩 학습 진행하기  
+
+### 5월 24일
+    1. 4개 차이점? (mutations, actions, state, getters)
+    2. vuex 왜 쓰는지? 
+        - https://vuex.vuejs.org/ (What is Vuex?)
+    3. vue 와 react 의 대응되는 개념은?
+    4. map 학습하기 (특징: 길이를 동일하게 return 한다)
+        - 그 외 sum, every, include, find, index 추 후 학습하기
+    5. myMixin - ts 설정하기
+
+### 5월 23일
+    1. vue, vuex 기본 개념 학습
+        - [v] 템플릿 문법(속성/표현식), computed, watch, slots 
+        - [v] 재사용&컴포지션(믹스인, 라이프 사이클 훅)
+        - [v] 스케일 업(상태 관리: vuex)
+    2. 아래는 당장은 학습하지 않는다
+        - setter, 동적 전달인자, Render
+    3. 스타일 가이드 
+        - [v] nameing (우선순위 A 규칙: 필수)
+    4. 책에 있는 챕터들도 같이 진행하기
+        - 위 개념에 대한 예제 같이 진행하기
+    5. reduce, filter 차이점 이해하는지?
+        - reduce: [], String, Number
+        - filter: [] 
 
 ### 5월 21일
     1. array methods - reduce, filter 학습
