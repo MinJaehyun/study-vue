@@ -1,6 +1,8 @@
 let myMixin = {
   props: {
     weight: {
+      type: Number,
+      require: true,
       default: 10,
     },
   },
