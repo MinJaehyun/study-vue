@@ -4,9 +4,19 @@ import TodoList from '@/pages/TodoList.vue';
 import PageNotFound from '@/pages/PageNotFound.vue';
 import TodoInput from '@/pages/TodoInputPage.vue';
 import TodoPage from '@/pages/TodoPage.vue';
+import Mixin from '@/components/study/mixin/test.vue';
+import Vuex from '@/components/study/vuex/test.vue';
 
 // routes 설정
 const routes = [
+  {
+    path: '/vuex',
+    component: Vuex,
+  },
+  {
+    path: '/mixin',
+    component: Mixin,
+  },
   {
     path: '/todo/:id',
     name: 'todo',
