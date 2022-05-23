@@ -1,15 +1,18 @@
 # TodoList Project
 
-## todoList project 주의 사항
+## 주의 사항
     * 진행 상황 슬랙에 공유하기
     * 컨벤션 맞추기: 카멜케이스
-    * 이번 주(23~29): 책 내용 만들고 -> Nuxt 로 변경하기
-    * 다음 주(30~5/5): 잡 조금씩 들어온다.
-    * 문서는 공식문서 또는 권위있는 블로그로만 보기(필)
-    * JS, TypeScript 조금씩 학습 진행하기  
+    * 문서는 공식문서 또는 권위있는 블로그로만 보도록 노력하기
+    * JS, TypeScript 조금씩 학습하기  
+    * 05/23~05/27: vue 예제 실습하기 -> Nuxt 로 변경하기
+        - 깃헙에 Nuxt 프로젝트 만들기
+        - 이 전 README.md 가져오기
+    * 05/30~06/02: 잡 조금씩 들어온다.
+   
 
 ### 5월 24일
-    1. 4개 차이점? (mutations, actions, state, getters)
+    1. mutations, actions, state, getters 차이점 이해 하는지?
     2. vuex 왜 쓰는지? 
         - https://vuex.vuejs.org/ (What is Vuex?)
     3. vue 와 react 의 대응되는 개념은?
