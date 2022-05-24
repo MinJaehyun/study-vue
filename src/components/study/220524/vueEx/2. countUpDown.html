@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>countUpDown</title>
+  <link rel="stylesheet" href="/src/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<h1>클릭 시, 카운터가 증가 및 감소합니다.</h1>
+<div id="app">
+  <p>{{count}}회</p>
+  <button @click="countUp">카운터 증가</button>
+  <button @click="downCount">카운터 감소</button>
+</div>
+<div id="app2">
+  test app2
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    count: 0
+  },
+  methods: {
+    countUp(){
+      this.count++;
+    },
+    downCount(){
+      // console.log('2');
+      this.count--;
+    },
+  }
+});
+</script>
+</body>
+</html>

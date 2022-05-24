@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bindtest3</title>
+  <link rel="stylesheet" href="/src/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <p align="right">우측정렬 직접 지정</p>
+  <p :align="myAlign">좌측정렬 v-bind 지정</p>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    myAlign: 'left',
+  },
+  methods: {
+  },
+})
+</script>
+</body>
+</html>
+<!-- 1. 태그안에 align='right' 설정하거나, 2. 바인딩하여 나타낼 수 있다 -->

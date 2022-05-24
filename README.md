@@ -5,20 +5,20 @@
     * 컨벤션 맞추기: 카멜케이스
     * 문서는 공식문서 또는 권위있는 블로그로만 보도록 노력하기
     * JS, TypeScript 조금씩 학습하기  
-    * 05/23~05/27: vue 예제 실습하기 -> Nuxt 로 변경하기
-        - 깃헙에 Nuxt 프로젝트 만들기
-        - 이 전 README.md 가져오기
+    * 05/23~05/27: vue 예제 실습 후 Nuxt 로 변경하기
     * 05/30~06/02: 잡 조금씩 들어온다.
    
 
 ### 5월 24일
-    1. mutations, actions, state, getters 차이점 이해 하는지?
-    2. vuex 왜 쓰는지? 
+    1. [진행 중] vue 예제 실습 후 Nuxt 로 변경하기
+        - 98page 까지 학습 완료
+    2. mutations, actions, state, getters 차이점 이해 하는지?
+    3. vuex 왜 쓰는지? 
         - https://vuex.vuejs.org/ (What is Vuex?)
-    3. vue 와 react 의 대응되는 개념은?
-    4. map 학습하기 (특징: 길이를 동일하게 return 한다)
+    4. vue 와 react 의 대응되는 개념은?
+    5. map 학습하기 (특징: 길이를 동일하게 return 한다)
         - 그 외 sum, every, include, find, index 추 후 학습하기
-    5. myMixin - ts 설정하기
+    6. myMixin - ts 설정하기
 
 ### 5월 23일
     1. vue, vuex 기본 개념 학습

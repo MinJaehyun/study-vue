@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <div>
+    <input type="text" v-model="myName">
+    <p>나는 {{ myName }} 입니다.</p>
+    <p>{{ myName.length }}</p>
+  </div>
+  <hr>
+  <div>
+    <input type="checkbox" v-model="myCheck">
+    체크박스 상태는 {{ myCheck }} 입니다
+  </div>
+  <hr>
+  <div>
+    <label><input type="checkbox" v-model="myChecks" value="red">적</label>
+    <label><input type="checkbox" v-model="myChecks" value="green">녹</label>
+    <label><input type="checkbox" v-model="myChecks" value="blue">청</label>
+    <br>
+    선택한 색은 {{ myChecks }} 입니다.
+  </div>
+  <hr>
+  <!-- NOTE:
+  1. checkbox 선택 시, true 값이 v-model 에 넘겨진다
+  2. 버튼을 활성/비활성 설정할 수 있다.
+  -->
+  <div>
+    <input type="checkbox" v-model="myAgree">
+    <!-- myAgree==false 대신 !myAgree -->
+    <button v-bind:disabled="!myAgree">송신</button>
+  </div>
+  <hr>
+  <div>
+    <label>
+      <input type="radio" value="red" v-model="picked">적
+    </label>
+    <label><input type="radio" value="green" v-model="picked">녹</label>
+    <label><input type="radio" value="blue" v-model="picked">청</label><br>
+    <!--    <div >{{ picked }} 이 선택됨</div>-->
+    <p>{{changeColor}}</p>
+  </div>
+  <hr>
+  <div>
+    <label>
+      <input type="radio" value="face1.jpg" v-model="fileName">
+      face1
+    </label>
+    <label>
+      <input type="radio" value="face2.jpg" v-model="fileName">
+      face2
+    </label>
+    <p>{{ fileName }}</p>
+    <img :src="fileName">
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    myName: '',
+    myCheck: false, // 초기값은 보통 false 이다.
+    myChecks: [],   // 빈문자열로 하면 true/false 로 나타난다.
+    myAgree: false,
+    picked: 'red',
+    fileName: '',
+  },
+  methods: {},
+  computed: {
+    // 빨강 -> 초록, 파랑 -> 빨강, 초록 -> 파랑
+    changeColor: function() {
+      // console.log('1');
+
+    },
+  },
+})
+</script>
+</body>
+</html>
+<!-- input checkbox 는 체크 시 true , 체크가 아니면 false 값을 갖는다 -->
+<!-- check 와 v-model 을 사용하여 check 한 버튼의 value 를 v-model 로 가져올 수 있다 -->
+<!-- 여러가지 선택할 때 checkbox 사용하고, 한가지만 선택 시 radiobutton 선택한다 -->

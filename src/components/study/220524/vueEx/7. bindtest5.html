@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<style>
+  .strike-through {
+    text-decoration: line-through;
+    color: lightgray;
+  }
+  .dark {
+    background-color: gray;
+  }
+</style>
+<div id="app">
+  <p class="strike-through">직접</p>
+  <p v-bind:class="myClass">v-bind 지정</p>
+  <p v-bind:class="[myClass, darkClass]">v-bind 복수 클래스 지정</p>
+  <p v-bind:class="{'strike-through': isOn}">데이터로 클래스 ON/OFF</p>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    myClass: 'strike-through',
+    darkClass: 'dark',
+    isOn: true,
+  },
+  methods: {
+  },
+})
+</script>
+</body>
+</html>
+<!-- bind 로 class 를 지정하는 방법을 배웠다. (복수 클래스 지정, 데이터로 클래스 on/off 하는 방법) -->
+<!-- isOn 이 true 이면 class 에 strike-through 설정한다. -->

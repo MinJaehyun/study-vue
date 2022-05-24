@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>countUp</title>
+  <link rel="stylesheet" href="/src/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<h2>클릭 시, 카운터 증가합니다.</h2>
+<div id="app">
+  <p>{{ count }}회</p>
+  <button v-on:click="countUp">카운터</button>
+  <!-- {{$data}} -->
+  <!-- <p>{{myText}}</p> -->
+  <p v-text="myText2"></p>
+  <p v-html="myText3"></p>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    count: 0,
+    myText: 'hi',
+    myText2: '<h1>hello!!</h1>',
+    myText3: '<h1>hello!!</h1>',
+  },
+  methods: {
+    countUp: function() {
+      this.count++;
+    },
+  },
+})
+</script>
+</body>
+</html>
+<!-- NOTE: body 다음에 script 를 위치시키면 상단 html 로딩 완료 후 실행한다. -->
+<!-- NOTE: 상단에 script 를 위치시키려면 new Vue 인스턴스 생성자를 window.onload = function() {} 로 감싸면 된다. -->
+<!-- script 는 body 안에 존재해야 한다. -->
+<!-- new Vue 의 el 에 #app 는 body 안에 div 에 설정한 id="app" 이다 -->
+<!-- {{$data}} 을 사용하면 전체 data 를 가져올 수 있다 -->
+<!-- {{}} 로 표현되는 내용을 v-text="변수" 로 나타낼 수도 있다-->
+<!-- v-text 는 태그도 포함하여 나타내고, v-html 는 태그 안에 내용만 나타낸다 -->
