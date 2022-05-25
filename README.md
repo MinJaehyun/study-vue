@@ -7,11 +7,18 @@
     * JS, TypeScript 조금씩 학습하기  
     * 05/23~05/27: vue 예제 실습 후 Nuxt 로 변경하기
     * 05/30~06/02: 잡 조금씩 들어온다.
-   
+
+### 5월 26일
+    1. [진행 중] 책의 예제 진행하기
+        - 140~200 까지 진행하기
+
+### 5월 25일
+    1. [진행 중] 책의 예제 html 아닌 vue 로 만들고, 이 후 nuxt 로 변환하기
+        - 99~140
 
 ### 5월 24일
-    1. [진행 중] vue 예제 실습 후 Nuxt 로 변경하기
-        - 98page 까지 학습 완료
+    1. [진행 중] vue 예제 실습 후 Nuxt 로 변경하기 
+        - 18~98page 학습 
     2. mutations, actions, state, getters 차이점 이해 하는지?
     3. vuex 왜 쓰는지? 
         - https://vuex.vuejs.org/ (What is Vuex?)
