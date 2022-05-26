@@ -15,13 +15,38 @@ import OneTest3 from '@/components/study/220525/OneTest3~4.vue';
 import Test from '@/components/study/220525/test.vue';
 import IfTest1 from '@/components/study/220525/IfTest1.vue';
 import ForeTest1 from '@/components/study/220525/ForeTest1.vue';
-import ForeTest3 from '@/components/study/220525/ForeTest3.vue';
+import ForTest3 from '@/components/study/220526/ForTest3.vue';
+import TableTest from '@/components/study/220526/TableTest.vue';
+import ForTest5 from '@/components/study/220526/ForTest5.vue';
+import ForTest6 from '@/components/study/220526/ForTest6.vue';
+import ForTest7 from '@/components/study/220526/ForTest7.vue';
+import Chapter6Test from '@/components/study/220526/Chapter6Test.vue';
 
 // routes 설정
 const routes = [
   {
-    path: '/foretest3',
-    component: ForeTest3,
+    path: '/chapter6test',
+    component: Chapter6Test,
+  },
+  {
+    path: '/fortest7',
+    component: ForTest7,
+  },
+  {
+    path: '/fortest6',
+    component: ForTest6,
+  },
+  {
+    path: '/fortest5',
+    component: ForTest5,
+  },
+  {
+    path: '/tabletest',
+    component: TableTest,
+  },
+  {
+    path: '/fortest3',
+    component: ForTest3,
   },
   {
     path: '/foretest1',
