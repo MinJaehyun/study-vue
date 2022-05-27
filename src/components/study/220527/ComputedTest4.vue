@@ -2,7 +2,6 @@
   <div>
     <h1>문자를 입력하면 그 문자를 포함한 항목만 표시하는 예제</h1>
     <input type="text" v-model.lazy="isClick" />
-    <p>{{ isClick }}</p>
     <p v-for="(item, index) in results" :key="index">{{ item }}</p>
   </div>
 </template>
@@ -18,8 +17,6 @@ export default defineComponent({
       isClick: '',
     };
   },
-  // methods: {
-  // },
   computed: {
     results() {
       return this.myArr.filter((item: string) => {
@@ -30,5 +27,4 @@ export default defineComponent({
   },
 });
 </script>
-
 <style scoped></style>

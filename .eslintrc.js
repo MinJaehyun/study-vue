@@ -20,19 +20,19 @@ module.exports = {
         ignores: ['default', 'Todo'],
       },
     ],
-    'prettier/prettier': [
-      'error',
-      {
-        printWidth: 80,
-        singleQuote: true,
-        semi: true,
-        tabWidth: 2,
-        trailingComma: 'all',
-        bracketSpacing: true,
-        arrowParens: 'avoid',
-        endOfLine: 'auto',
-      },
-    ],
+    // 'prettier/prettier': [
+    //   'error',
+    //   {
+    //     printWidth: 80,
+    //     singleQuote: true,
+    //     semi: true,
+    //     tabWidth: 2,
+    //     trailingComma: 'all',
+    //     bracketSpacing: true,
+    //     arrowParens: 'avoid',
+    //     endOfLine: 'auto',
+    //   },
+    // ],
   },
   parserOptions: {
     ecmaVersion: 2020,

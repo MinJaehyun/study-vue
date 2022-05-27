@@ -27,9 +27,14 @@ import GoogleCharts from '@/components/study/220527/GoogleCharts.vue';
 import ComputedTest2 from '@/components/study/220527/ComputedTest2.vue';
 import ComputedTest3 from '@/components/study/220527/ComputedTest3.vue';
 import ComputedTest4 from '@/components/study/220527/ComputedTest4.vue';
+import ReComputedTest4 from '@/components/study/220527/ReComputedTest4.vue';
 
 // routes 설정
 const routes = [
+  {
+    path: '/recomputedtest4',
+    component: ReComputedTest4,
+  },
   {
     path: '/computedtest4',
     component: ComputedTest4,
