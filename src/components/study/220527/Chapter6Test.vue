@@ -26,11 +26,11 @@ export default defineComponent({
   },
   methods: {
     changeItem(index: any) {
-      console.log(index); // 7
-      console.log(typeof this.numberList[index]); // Number
-      console.log(this.numberList[index]); // 9
+      // console.log(index); // 7
+      // console.log(typeof this.numberList[index]); // Number
+      // console.log(this.numberList[index]); // 9
       this.numberList.splice(index, 1, (this.numberList[index] += 1));
-      console.log(this.numberList);
+      // console.log(this.numberList);
     },
     deleteItem(index: any) {
       // 해당 값을 삭제한다.
@@ -40,16 +40,30 @@ export default defineComponent({
       // 맨 뒤에 숫자 1추가하기
       this.numberList.push(1);
     },
-    // sortNumber(data: any) {
-    //   // 오름차순 정렬하되 중복 제거하기
-    //   // 1->2, 중복제거? 검색하기
-    //   let result = data.sort.reduce((acc: any, cur: any) => {
-    //     acc.push(cur);
-    //   }, []);
-    //   result.sort(function (a: any, b: any) {
-    //     return a < b ? -1 : 1;
-    //   });
-    // },
+    sortNumber(data: any) {
+      // 오름차순 정렬하되 중복 제거하기
+      const result = data.sort(function (a: any, b: any) {
+        return a < b ? -1 : 1;
+      });
+      // console.log(result); // 0~7
+      // 결과 값을 가져와서 indexof 로 처리한다
+      // numberList 를 반복하여 각각의 값을 넣는다
+      // 정렬된 값을 reduce 에서 각각의 값을 indexOf 로 검사한다.
+      const numberList = result.reduce((prev: any, cur: any) => {
+        // NOTE: indexOf() 값이 -1 이면 값이 없으므로 추가한다.
+        if (prev.indexOf(cur) === -1) {
+          prev.push(cur);
+          // console.log(prev);
+        } else if (prev.indexOf(cur) > -1) {
+          // NOTE: indexOf() 값이 0 이상이면 값이 있으므로 아무것도 하지 않는다.
+          console.log(cur);
+        }
+        this.numberList = prev;
+        // console.log(this.numberList);
+        return prev;
+      }, []);
+      return numberList;
+    },
   },
 });
 </script>

@@ -20,7 +20,7 @@ import TableTest from '@/components/study/220526/TableTest.vue';
 import ForTest5 from '@/components/study/220526/ForTest5.vue';
 import ForTest6 from '@/components/study/220526/ForTest6.vue';
 import ForTest7 from '@/components/study/220526/ForTest7.vue';
-import Chapter6Test from '@/components/study/220526/Chapter6Test.vue';
+import Chapter6Test from '@/components/study/220527/Chapter6Test.vue';
 import CallByVal from '@/components/study/220527/CallByVal.vue';
 import CallByRef from '@/components/study/220527/CallByRef.vue';
 

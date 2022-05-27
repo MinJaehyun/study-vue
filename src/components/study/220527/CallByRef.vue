@@ -1,7 +1,9 @@
 <template>
   <div>
     <!--    {{ test }}-->
-    {{ sumWithDeepCopy(testObj) }}
+    {{ refSum(testObj) }}
+    <!--    {{ sumWithDeepCopy(testObj) }}-->
+    <!--    {{ testObj.num1 }}-->
   </div>
 </template>
 
