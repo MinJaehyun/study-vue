@@ -31,7 +31,7 @@ export default defineComponent({
     setTime(){
       // time 이 5 에서 0 이 될 때, clearInterval 을 통해 중지된다.
       if (this.setTime === 0) {
-        clearInterval(this.timeObj)
+        clearInterval(this.timeNum)
       }
     },
   },
