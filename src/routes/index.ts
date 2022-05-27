@@ -28,9 +28,14 @@ import ComputedTest2 from '@/components/study/220527/ComputedTest2.vue';
 import ComputedTest3 from '@/components/study/220527/ComputedTest3.vue';
 import ComputedTest4 from '@/components/study/220527/ComputedTest4.vue';
 import ReComputedTest4 from '@/components/study/220527/ReComputedTest4.vue';
+import ComputedTest5 from "@/components/study/220527/ComputedTest5.vue";
 
 // routes 설정
 const routes = [
+  {
+    path: '/computedtest5',
+    component: ComputedTest5,
+  },
   {
     path: '/recomputedtest4',
     component: ReComputedTest4,
