@@ -1,0 +1,37 @@
+<template>
+  <div>
+    <input type="number" v-model="price" />원 *
+    <input type="number" v-model="count" />개
+  </div>
+  <p>합계: {{ sumPrice }}</p>
+  <p>세금포함: {{ taxIncluded }}</p>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'ComputedTest',
+  data() {
+    return {
+      price: 100,
+      count: 0,
+    };
+  },
+  methods: {},
+  computed: {
+    sumPrice() {
+      return this.price * this.count;
+    },
+    taxIncluded() {
+      return this.price * this.count * 1.08;
+    },
+  },
+});
+</script>
+
+<style scoped></style>
+<!--
+1. input type number 지정하면 위아래 가격 조절할 수 있다
+2.
+-->
