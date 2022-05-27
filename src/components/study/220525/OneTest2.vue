@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- disabled 이 true 면 실행된다. -->
     <button value="good" :disabled="isClick" @click="onClick">좋아~!</button>
   </div>
 </template>

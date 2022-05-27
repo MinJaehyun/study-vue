@@ -24,7 +24,7 @@ export default defineComponent({
       return this.price * this.count;
     },
     taxIncluded() {
-      return this.price * this.count * 1.08;
+      return this.sumPrice * 1.08;
     },
   },
 });

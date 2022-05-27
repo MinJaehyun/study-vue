@@ -10,7 +10,15 @@
     </ul>
     <button @click="addNumber">추가</button>
     <button @click="sortNumber(numberList)">sort</button>
-    <button>구구단 보이기</button>
+    <button @click="showGuGu">구구단 보이기</button>
+    <!-- NOTE: v-if, v-for 사용 시, v-if 를 template 에 작성하여 처리하면 된다. -->
+    <template v-if="isClick">
+      <div v-for="(j, index) in numberList" :key="index">
+        <div v-for="(i, index) in 9" :key="index">
+          <p>{{ j }} * {{ i }} = {{ j * i }}</p>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -21,6 +29,7 @@ export default defineComponent({
   name: 'Chapter6Test',
   data() {
     return {
+      isClick: false,
       numberList: [2, 3, 4, 5, 6, 7, 8, 9],
     };
   },
@@ -42,27 +51,30 @@ export default defineComponent({
     },
     sortNumber(data: any) {
       // 오름차순 정렬하되 중복 제거하기
-      const result = data.sort(function (a: any, b: any) {
-        return a < b ? -1 : 1;
-      });
       // console.log(result); // 0~7
       // 결과 값을 가져와서 indexof 로 처리한다
       // numberList 를 반복하여 각각의 값을 넣는다
       // 정렬된 값을 reduce 에서 각각의 값을 indexOf 로 검사한다.
-      const numberList = result.reduce((prev: any, cur: any) => {
-        // NOTE: indexOf() 값이 -1 이면 값이 없으므로 추가한다.
-        if (prev.indexOf(cur) === -1) {
-          prev.push(cur);
-          // console.log(prev);
-        } else if (prev.indexOf(cur) > -1) {
-          // NOTE: indexOf() 값이 0 이상이면 값이 있으므로 아무것도 하지 않는다.
-          console.log(cur);
-        }
-        this.numberList = prev;
-        // console.log(this.numberList);
-        return prev;
-      }, []);
-      return numberList;
+      this.numberList = data
+        .sort(function (a: any, b: any) {
+          return a < b ? -1 : 1;
+        })
+        .reduce((prev: any, cur: any) => {
+          // NOTE: indexOf() 값이 -1 이면 값이 없으므로 추가한다.
+          if (prev.indexOf(cur) === -1) {
+            prev.push(cur);
+            // console.log(prev);
+          } else if (prev.indexOf(cur) > -1) {
+            // NOTE: indexOf() 값이 0 이상이면 값이 있으므로 아무것도 하지 않는다.
+            // console.log(cur);
+          }
+          // console.log(this.numberList);
+          return prev;
+        }, []);
+      // NOTE: 이 전에 const numberList 에 담을 필요도 없고, return 할 필요도 없다.
+    },
+    showGuGu() {
+      this.isClick = !this.isClick;
     },
   },
 });
