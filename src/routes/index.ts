@@ -34,9 +34,14 @@ import WatchTest2 from "@/components/study/220528/WatchTest2.vue";
 import TransTest1 from "@/components/study/220528/TransTest1.vue";
 import TransTest2 from "@/components/study/220528/TransTest2.vue";
 import ShuffleTest from "@/components/study/220528/ShuffleTest.vue";
+import TransTest3 from "@/components/study/220528/TransTest3.vue";
 
 // routes 설정
 const routes = [
+  {
+    path: '/transtest3',
+    component: TransTest3,
+  },
   {
     path: '/shuffletest',
     component: ShuffleTest,
