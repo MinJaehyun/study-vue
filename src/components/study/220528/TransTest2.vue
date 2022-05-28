@@ -34,14 +34,26 @@ export default defineComponent({
   },
 });
 </script>
-
 <style scoped>
-.v-enter-active, .v-leave-active {
+.v-enter {
+  opacity: 0;
+}
+.v-enter-active {
   transition: 1.5s;
 }
-.v-enter, .v-leave-to {
+.v-enter-to {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+.v-leave {
+  opacity: 1;
+}
+.v-leave-active {
+  transition: 1.5s;
+}
+.v-leave-to {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateY(15px);
 }
 .container {
   text-align: left;
@@ -52,5 +64,4 @@ export default defineComponent({
 2. 이 예제에서는 리스트 증감에 애니 효과를 주는 것이 목표이므로 li 를 <transition> 처리한다.
 3. <transition-group> 는 꼭 li 태그를 사용할 필요 없다!!
 - https://kr.vuejs.org/v2/guide/transitions.html - 리스트 트랜지션 내용
-- 둘의 차이는?
 -->
