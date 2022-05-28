@@ -35,7 +35,7 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.v-enter {
+.v-enter-from {
   opacity: 0;
 }
 .v-enter-active {
@@ -45,7 +45,7 @@ export default defineComponent({
   opacity: 1;
   transform: translateY(-5px);
 }
-.v-leave {
+.v-leave-from {
   opacity: 1;
 }
 .v-leave-active {
