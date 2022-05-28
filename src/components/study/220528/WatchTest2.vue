@@ -13,7 +13,7 @@ export default defineComponent({
   name: 'WatchTest2',
   data() {
     return {
-      setTime: 3,
+      setTime: 5,
       timeNum: 0,
     };
   },
@@ -44,7 +44,8 @@ export default defineComponent({
 <!--
 1. 참고: https://ko.javascript.info/settimeout-setinterval
 2. setTimeout, setInterval, clearInterval 개념 이해하기
-3. 질문: 26라인 콘솔 3나오는 이유는?ㅎ;
+3. 질문: 28라인 콘솔 3 나오는 이유ㅎ?
+- 반환 값: 반환 intervalID된 값은 호출에 의해 생성된 타이머를 식별하는 0이 아닌 숫자 값ㅇ다.
 -->
 
 <!-- 흐름:
