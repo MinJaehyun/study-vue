@@ -31,9 +31,14 @@ import ReComputedTest4 from '@/components/study/220527/ReComputedTest4.vue';
 import ComputedTest5 from "@/components/study/220527/ComputedTest5.vue";
 import WatchTest1 from "@/components/study/220528/WatchTest1.vue";
 import WatchTest2 from "@/components/study/220528/WatchTest2.vue";
+import TransTest1 from "@/components/study/220528/TransTest1.vue";
 
 // routes 설정
 const routes = [
+  {
+    path: '/transtest1',
+    component: TransTest1,
+  },
   {
     path: '/watchtest2',
     component: WatchTest2,
