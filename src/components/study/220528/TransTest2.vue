@@ -50,6 +50,7 @@ export default defineComponent({
 <!--
 1. 애니메이션 효과를 나타낼 부분을 <transition> 처리하는게 포인트
 2. 이 예제에서는 리스트 증감에 애니 효과를 주는 것이 목표이므로 li 를 <transition> 처리한다.
-3. 리스트의 경우는 일반 <transition> 이 아닌 <transition-group> 처리한다.
+3. <transition-group> 는 꼭 li 태그를 사용할 필요 없다!!
+- https://kr.vuejs.org/v2/guide/transitions.html - 리스트 트랜지션 내용
 - 둘의 차이는?
 -->
