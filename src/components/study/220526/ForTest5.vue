@@ -1,21 +1,13 @@
 <template>
-  <div id="app">
-    <ul>
-      <li v-for="item in myArr" :key="item.id">{{ item }}</li>
-    </ul>
-    <div>
-      <button @click="testObj(myArr.length, 0, '맨 뒤 추가')">
-        맨 뒤 추가
-      </button>
-    </div>
-    <div>
-      <button @click="testObj(3, 0, '')">네 번째에 추가</button>
-    </div>
+  <div>
+    <p v-for="(item, index) in myArr" :key="index">{{ item }}</p>
+    <div><button @click="testObj(myArr.length, 0, '맨 뒤 추가')">맨 뒤 추가</button></div>
+    <div><button @click="testObj(3, 0, '추가')">네 번째에 추가</button></div>
     <div><button @click="testObj(0, 1, '변경')">첫 번째를 변경</button></div>
     <div><button @click="testObj(1, 1)">두 번째를 삭제</button></div>
   </div>
 </template>
-<!-- 지정위치 마지막 myArr.length-->
+
 <script lang="ts">
 import { defineComponent } from 'vue';
 
@@ -27,19 +19,20 @@ export default defineComponent({
     };
   },
   methods: {
+    // 하단의 메서드를 하나로 통합하여 사용
+    testObj(index: any, deleteCount: any, addText?: any) {
+      if (typeof addText !== 'undefined') {
+        this.myArr.splice(index, deleteCount, addText);
+      } else {
+        this.myArr.splice(index, deleteCount);
+      }
+    },
     // lastPush() {
     //   this.myArr.push('다섯번째');
     // },
     // addObj(startOne: any, deleteCount: any, item: any) {
     //   this.myArr.splice(start, deleteCount, item);
     // },
-    testObj(startOne: any, deleteCount: any, item?: any) {
-      if (typeof item !== 'undefined') {
-        this.myArr.splice(startOne, deleteCount, item);
-      } else {
-        this.myArr.splice(startOne, deleteCount);
-      }
-    },
     // changeObj(0, 1, '변경') {
     //   this.myArr.splice(0, 1, '변경');
     // },
@@ -47,14 +40,11 @@ export default defineComponent({
     //   this.myArr.splice(1, 1);
     // },
   },
-  // created() {
-  //   console.log(this.myArr.length);
-  // },
 });
 </script>
 
 <style scoped></style>
 <!--
-1. splice(3,0,'내용') 0 사용하면 뒤를 자르지 않고 사이에 넣는다.
-2. splice(1,1) 처리하면 해당 인덱스를 삭제한다.
+1. splice(index, deleteCount, '입력할 내용')
+2. splice(1,1) 는 2번째 인덱스를 1개 삭제한다.
 -->

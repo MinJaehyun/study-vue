@@ -31,7 +31,6 @@ export default defineComponent({
       ],
     };
   },
-  methods: {},
 });
 </script>
 
@@ -51,7 +50,7 @@ table tr:nth-of-type(even) {
   background-color: rgba(0, 0, 255, 0.1);
 }
 </style>
-<!-- 데이터를 테이블로 만들기 위해서는 어떻게 처리해야 할까? -->
-<!-- v-for 를 이차원배열처럼 사용할 수도 있다.
-헤더는 1차원 배열로 바디는 2차원 배열로 나타내면 된다.
+<!--
+1. v-for 를 이차원 배열로 사용할 수 있다.
+2. 헤더는 1차원 배열로 바디는 2차원 배열로 나타내면 된다.
 -->
