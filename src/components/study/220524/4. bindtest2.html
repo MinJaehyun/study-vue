@@ -2,25 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>bindtest3</title>
+  <title>bindTest2</title>
   <link rel="stylesheet" href="/src/assets/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+<h1></h1>
 <div id="app">
-  <p align="right">우측정렬 직접 지정</p>
-  <p :align="myAlign">좌측정렬 v-bind 지정</p>
+    <a href="https://roadbook.co.kr">직접 링크 지정</a>
+    <a :href="myURL">v-bind 로 링크 지정</a>
 </div>
 <script>
 new Vue({
   el: '#app',
   data: {
-    myAlign: 'left',
-  },
-  methods: {
-  },
+    myURL: 'https://roadbook.co.kr'
+},
 })
 </script>
 </body>
 </html>
-<!-- 1. 태그안에 align='right' 설정하거나, 2. 바인딩하여 나타낼 수 있다 -->
+<!-- src 대신 :src 처럼 바인딩 사용하여 data 를 사용할 수 있다 -->

@@ -7,14 +7,11 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<h1>클릭 시, 카운터가 증가 및 감소합니다.</h1>
+<h1>클릭 시, 카운터가 증가/감소 합니다.</h1>
 <div id="app">
-  <p>{{count}}회</p>
+  <p>{{ count }}회</p>
   <button @click="countUp">카운터 증가</button>
   <button @click="downCount">카운터 감소</button>
-</div>
-<div id="app2">
-  test app2
 </div>
 <script>
 new Vue({
@@ -24,11 +21,10 @@ new Vue({
   },
   methods: {
     countUp(){
-      this.count++;
+      this.count += 1;
     },
     downCount(){
-      // console.log('2');
-      this.count--;
+      this.count -= 1;
     },
   }
 });

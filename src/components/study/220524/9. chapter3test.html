@@ -18,15 +18,20 @@
   }
 </style>
 <div id="app">
-  <p><a href="https://naver.com">1. 네이버로 연결</a></p>
-  <!-- face2.png -->
-  <p><img src="/src/components/study/220524/vueEx/dog.jpg"></p>
+  <p><a href="https://naver.com">직접 주소 지정</a></p>
+
+  <p><img src="/src/components/study/220524/dog.jpg">직접 이미지 지정</p>
+
   <p align="left">텍스트 왼쪽 정렬</p>
+
   <p :align="myAlign">텍스트 오른쪽 정렬</p>
+
   <p :align="centerAlign">중앙정렬 v-bind 지정</p>
-  <p style="color: red;">인라인 스타일로 글자색을 빨간색으로</p>
-  <p :style="{fontSize: mySize, color: color}">인라인 스타일로 글자 크기를 150% 크게 빨간색으로</p>
-  <p :class="myBlue">불루 언더라인 class 지정</p>
+
+  <p style="color: red;">직접 스타일 지정</p>
+
+  <p :style="{ fontSize: mySize, color: dataColor }">v-bind 로 스타일 지정</p>
+  <p :class="myBlue">v-bidn 로 data 에 설정한 css 를 지정</p>
 </div>
 <script>
 new Vue({
@@ -35,10 +40,9 @@ new Vue({
     myAlign: 'right',
     centerAlign: 'center',
     mySize: '150%',
-    color: 'red',
+    dataColor: 'green',
     myBlue: 'strike-through',
   },
-  methods: {},
 })
 </script>
 </body>
