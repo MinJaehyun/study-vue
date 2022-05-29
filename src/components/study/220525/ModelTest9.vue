@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <select v-model="myColor" multiple style="width: 150px">
+  <div>
+    <select v-model="myColor" multiple style="width: 300px">
       <option>red</option>
       <option>green</option>
       <option>blue</option>
@@ -23,3 +23,4 @@ export default defineComponent({
 </script>
 
 <style scoped></style>
+<!-- select option 에 mutiple 속성은 shift+클릭하여 다중 선택해야 한다 -->

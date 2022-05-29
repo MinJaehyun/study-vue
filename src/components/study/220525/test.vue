@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>간단한 계산기</h1>
+    <h1>음수처리에 에러를 갖는 심플한 계산기</h1>
     <input type="text" v-model="num1" />
     <input type="text" v-model="num2" />
     <div>
@@ -27,7 +27,6 @@ export default defineComponent({
   },
   methods: {
     plus() {
-      // console.log(typeof this.num1);
       this.result = Number(this.num1) + Number(this.num2);
     },
     minus() {

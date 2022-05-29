@@ -14,7 +14,7 @@ import OneTest2 from '@/components/study/220525/OneTest2.vue';
 import OneTest3 from '@/components/study/220525/OneTest3~4.vue';
 import Test from '@/components/study/220525/test.vue';
 import IfTest1 from '@/components/study/220525/IfTest1.vue';
-import ForeTest1 from '@/components/study/220525/ForeTest1.vue';
+import ForeTest1 from '@/components/study/220525/ForTest1.vue';
 import ForTest3 from '@/components/study/220526/ForTest3.vue';
 import TableTest from '@/components/study/220526/TableTest.vue';
 import ForTest5 from '@/components/study/220526/ForTest5.vue';

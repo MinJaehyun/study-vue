@@ -23,4 +23,4 @@ export default defineComponent({
 });
 </script>
 <style scoped></style>
-<!-- option 에 선택한 값이 v-model 에 들어간다. -->
+<!-- select option 에서 선택한 값이 v-model 지정한 변수 data 에 지정된다. -->
