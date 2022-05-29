@@ -23,7 +23,6 @@ import ForTest7 from '@/components/study/220526/ForTest7.vue';
 import Chapter6Test from '@/components/study/220527/Chapter6Test.vue';
 import CallByVal from '@/components/study/220527/CallByVal.vue';
 import CallByRef from '@/components/study/220527/CallByRef.vue';
-import GoogleCharts from '@/components/study/220527/GoogleCharts.vue';
 import ComputedTest2 from '@/components/study/220527/ComputedTest2.vue';
 import ComputedTest3 from '@/components/study/220527/ComputedTest3.vue';
 import ComputedTest4 from '@/components/study/220527/ComputedTest4.vue';
@@ -81,10 +80,6 @@ const routes = [
   {
     path: '/computedtest2',
     component: ComputedTest2,
-  },
-  {
-    path: '/googlecharts',
-    component: GoogleCharts,
   },
   {
     path: '/callbyref',

@@ -1,14 +1,13 @@
 <template>
   <div>
     <h1>문자을 입력하면 남은 글자수를 표시하는 예제</h1>
-    <h3>140 이내로 입력해 주세요.</h3>
-    <textarea :value="textLength"></textarea>
+    <textarea v-model="textLength" maxlength="140" placeholder="140 글자 이내로 입력해 주세요."></textarea>
     <p>총 글자는 {{ totalLength }}</p>
     <p :style="{ color: colorComputed }" v-if="textRemind > 0">
       남은 글자는 {{ textRemind }}
     </p>
-    <p :style="{ color: colorComputed }" v-if="textRemind < 0">
-      글자 수를 초과 하셨습니다!
+    <p :style="{ color: colorComputed }" v-if="textRemind <= 0">
+      140 글자 수를 초과 하실 수 없습니다!
     </p>
   </div>
 </template>
@@ -34,12 +33,13 @@ export default defineComponent({
     },
     colorComputed() {
       // 남은 글자가 140 이하면 녹색, 이상이면 빨강 v-if
-      // console.log(this.textRemind);
-      if (this.textRemind < 0) {
-        return 'red';
+      let color = ''
+      if (this.textRemind <= 0) {
+        color = 'red';
       } else {
-        return 'green';
+        color = 'green';
       }
+      return color
     },
   },
   // watch: {
@@ -54,4 +54,6 @@ export default defineComponent({
 </script>
 
 <style scoped></style>
-<!-- 140 글자 이상은 아예 못쓰게 만들기 -->
+<!-- 140 글자 이상은 아예 못쓰게 만들기
+1. html textarea 속성 maxlength=140 설정하기
+-->

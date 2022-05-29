@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>call by value 를 이해하기 위한 예제</h1>
     {{ sum(num1, num2) }}
     <hr />
     {{ num1 }}, {{ num2 }}

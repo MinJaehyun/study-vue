@@ -31,7 +31,4 @@ export default defineComponent({
 </script>
 
 <style scoped></style>
-<!--
-1. input type number 지정하면 위아래 가격 조절할 수 있다
-2.
--->
+<!-- input type number 지정하면 화살표로 가격 조절할 수 있다 -->

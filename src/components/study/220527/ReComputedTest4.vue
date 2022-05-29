@@ -22,11 +22,11 @@ export default defineComponent({
   },
   methods: {},
   computed: {
-    // 아래 computed 메서드는 [] 이므로, 반복문을 돌려서 처리할 수 있다!!
+    // 아래 checkStr 함수의 타입은 [] 이므로, 반복문을 돌려서 처리할 수 있다!!
     checkStr() {
       // 입력값을 배열을 돌면서(filter), 한글자 값이 있으면 해당 값을 배열에 넣는다
       return this.myArr.filter((item: any)=>{
-        console.log(item);
+        // console.log(item);
         if (item.indexOf(this.textStr) >= 0) {
           return true;
         }
