@@ -34,9 +34,29 @@ import TransTest1 from "@/components/study/220528/TransTest1.vue";
 import TransTest2 from "@/components/study/220528/TransTest2.vue";
 import ShuffleTest from "@/components/study/220528/ShuffleTest.vue";
 import TransTest3 from "@/components/study/220528/TransTest3.vue";
+import Chapter10 from "@/components/study/220530/Chapter10.vue";
+import TodoList1 from "@/components/study/220530/TodoList1.vue";
+import TodoList2 from "@/components/study/220530/TodoList2.vue";
+import TestTodoList from "@/components/study/220530/TestTodoList.vue";
 
 // routes 설정
 const routes = [
+  {
+    path: '/testtodolist',
+    component: TestTodoList,
+  },
+  {
+    path: '/todolist2',
+    component: TodoList2,
+  },
+  {
+    path: '/todolist1',
+    component: TodoList1,
+  },
+  {
+    path: '/chapter10',
+    component: Chapter10,
+  },
   {
     path: '/transtest3',
     component: TransTest3,
