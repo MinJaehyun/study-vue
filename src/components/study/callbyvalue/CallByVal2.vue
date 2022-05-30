@@ -1,13 +1,12 @@
 <template>
   <div>
+    <h1>call by value 예제 2.</h1>
     {{ testObj.num1 }}
     <br />
     {{ testObj.num2 }}
     <br />
-    <!-- 1. call by ref -->
     <!-- {{ refSum(testObj) }}-->
-
-    <!-- 2. call by ref -->
+    <br />
     {{ sumWithDeepCopy(testObj) }}
   </div>
 </template>
@@ -16,7 +15,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'CallByRef',
+  name: 'CallByVal2',
   data() {
     return {
       testObj: {
@@ -45,14 +44,6 @@ export default defineComponent({
       return num1 + num2;
     },
   },
-  // created() {
-  //   this.refSum(this.testObj);
-  // },
-  // computed: {
-  //   test() {
-  //     return this.refSum(this.testObj);
-  //   },
-  // },
 });
 </script>
 <style scoped></style>

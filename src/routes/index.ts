@@ -21,8 +21,8 @@ import ForTest5 from '@/components/study/220526/ForTest5.vue';
 import ForTest6 from '@/components/study/220526/ForTest6.vue';
 import ForTest7 from '@/components/study/220526/ForTest7.vue';
 import Chapter6Test from '@/components/study/220527/Chapter6Test.vue';
-import CallByVal from '@/components/study/220527/CallByVal.vue';
-import CallByRef from '@/components/study/220527/CallByRef.vue';
+import CallByVal from '@/components/study/callbyvalue/CallByVal1.vue';
+import CallByRef from '@/components/study/callbyvalue/CallByVal2.vue';
 import ComputedTest2 from '@/components/study/220527/ComputedTest2.vue';
 import ComputedTest3 from '@/components/study/220527/ComputedTest3.vue';
 import ComputedTest4 from '@/components/study/220527/ComputedTest4.vue';
@@ -38,9 +38,14 @@ import Chapter10 from "@/components/study/220530/Chapter10.vue";
 import TodoList1 from "@/components/study/220530/TodoList1.vue";
 import TodoList2 from "@/components/study/220530/TodoList2.vue";
 import TestTodoList from "@/components/study/220530/TestTodoList.vue";
+import CallByVal3 from "@/components/study/callbyvalue/CallByVal3.vue";
 
 // routes 설정
 const routes = [
+  {
+    path: '/callbyval3',
+    component: CallByVal3,
+  },
   {
     path: '/testtodolist',
     component: TestTodoList,
