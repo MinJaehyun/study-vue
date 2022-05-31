@@ -21,8 +21,8 @@ import ForTest5 from '@/components/study/220526/ForTest5.vue';
 import ForTest6 from '@/components/study/220526/ForTest6.vue';
 import ForTest7 from '@/components/study/220526/ForTest7.vue';
 import Chapter6Test from '@/components/study/220527/Chapter6Test.vue';
-import CallByVal from '@/components/study/callbyvalue/CallByVal1.vue';
-import CallByRef from '@/components/study/callbyvalue/CallByVal2.vue';
+import CallByVal1 from '@/components/study/callbyvalue/CallByVal1.vue';
+import CallByVal2 from '@/components/study/callbyvalue/CallByVal2.vue';
 import ComputedTest2 from '@/components/study/220527/ComputedTest2.vue';
 import ComputedTest3 from '@/components/study/220527/ComputedTest3.vue';
 import ComputedTest4 from '@/components/study/220527/ComputedTest4.vue';
@@ -37,11 +37,33 @@ import TransTest3 from "@/components/study/220528/TransTest3.vue";
 import Chapter10 from "@/components/study/220530/Chapter10.vue";
 import TodoList1 from "@/components/study/220530/TodoList1.vue";
 import TodoList2 from "@/components/study/220530/TodoList2.vue";
-import TestTodoList from "@/components/study/220530/TestTodoList.vue";
+import TestTodoList from "@/components/study/220531/TestTodoList.vue";
 import CallByVal3 from "@/components/study/callbyvalue/CallByVal3.vue";
+import CompTest1 from "@/components/study/220531/CompTest1.vue";
+import Chapter12 from "@/components/study/220531/Chapter12.vue";
 
 // routes 설정
 const routes = [
+  {
+    path: '/chapter12',
+    component: Chapter12,
+  },
+  {
+    path: '/chapter12',
+    component: Chapter12,
+  },
+  {
+    path: '/comptest1',
+    component: CompTest1,
+  },
+  {
+    path: '/callbyval2',
+    component: CallByVal2,
+  },
+  {
+    path: '/callbyval1',
+    component: CallByVal1,
+  },
   {
     path: '/callbyval3',
     component: CallByVal3,
@@ -105,14 +127,6 @@ const routes = [
   {
     path: '/computedtest2',
     component: ComputedTest2,
-  },
-  {
-    path: '/callbyref',
-    component: CallByRef,
-  },
-  {
-    path: '/callbyval',
-    component: CallByVal,
   },
   {
     path: '/chapter6test',
