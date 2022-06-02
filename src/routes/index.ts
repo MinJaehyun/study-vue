@@ -41,9 +41,24 @@ import TestTodoList from "@/components/study/220531/TestTodoList.vue";
 import CallByVal3 from "@/components/study/callbyvalue/CallByVal3.vue";
 import CompTest1 from "@/components/study/220531/CompTest1.vue";
 import Chapter12 from "@/components/study/220531/Chapter12.vue";
+import JsonLoadVue from "@/components/study/220602/JsonLoadVue.vue";
+import JsonTest1 from "@/components/study/220602/JsonTest1.vue";
+import OxQuiz from "@/components/study/220602/OxQuiz.vue";
 
 // routes 설정
 const routes = [
+  {
+    path: '/oxquiz',
+    component: OxQuiz,
+  },
+  {
+    path: '/jsontest1',
+    component: JsonTest1,
+  },
+  {
+    path: '/jsonloadvue',
+    component: JsonLoadVue,
+  },
   {
     path: '/chapter12',
     component: Chapter12,

@@ -1,0 +1,7 @@
+[
+  {"id": 1, "name": "drone1", "text":  "대한민국의 수도는 서울 입니다.", "score": 1, "checked": "O", "temp": "", "options": ["O", "X"]},
+  {"id": 2, "name": "drone2", "text":  "4 + 4 는 8 입니다.", "score": 2, "checked": "O", "temp": "","options": ["O", "X"]},
+  {"id": 3, "name": "drone3", "text":  "1 + 1 는 몇 입니까?", "score": 100, "checked": 2, "temp": "",
+    "options": [1,2,3,4]
+  }
+]
