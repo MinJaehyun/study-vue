@@ -3,7 +3,7 @@
     <h1>간단한 게시판</h1>
     <p>게시판 데이터 json 파일 읽기</p>
     <input type="file" class="inputFile" @change="onChangeFileReader">
-    <button>게시판 저장하기</button>
+    <button @click="onClickSaveList">게시판 저장하기</button>
 
     <!-- if loadData 있으면 table 구조 보여주기 -->
     <table v-if="listBoard" class="table">
@@ -60,6 +60,28 @@ export default defineComponent({
     };
   },
   methods: {
+    // 리스트 저장하기
+    onClickSaveList(){
+      let data = this.loadBoardData
+      if (data.length === 0) return;
+      let filename = 'src/assets/data/220605/board.json';
+      if (typeof data === 'object') {
+         data = JSON.stringify(data, undefined, 2);
+         // console.log(data) // json 문자열
+      }
+      let blob = new Blob([data], {type: 'application/json'});
+      // console.log(blob) // {size: 480, type: 'text/json'}
+      let a = document.createElement('a');
+      // console.log(a)
+      // <a download="src/assets/data/220605/board.json" href="blob:http://localhost:8080/0b19f052-09c7-435c-b9b3-f1d4bec968a3" data-downloadurl="text/json:src/assets/data/board.json:blob:http://localhost:8080/0b19f052-09c7-435c-b9b3-f1d4bec968a3"></a>
+      a.download = filename;
+      // console.log(a)
+      a.href = window.URL.createObjectURL(blob);
+      // console.log(a)
+      // <a download="src/assets/data/220605/board.json" href="blob:http://localhost:8080/1a8c243c-547f-4849-af46-b66a671388f1" data-downloadurl="text/json:src/assets/data/220605/board.json:blob:http://localhost:8080/1a8c243c-547f-4849-af46-b66a671388f1"></a>
+      a.dataset.downloadurl = ['application/json', a.download, a.href].join(':');
+      console.log(a)
+    },
     // 게시글 목록 불러오기
     onClickGetList(){
       this.listBoard = true,
@@ -141,9 +163,3 @@ export default defineComponent({
   padding: 10px 12px;
 }
 </style>
-<!-- 참고:
-1. https://codepen.io/aldo814/pen/WNejQgG
--->
-<!--
-1. <thead> 대신 <tr> 사용하기
--->
