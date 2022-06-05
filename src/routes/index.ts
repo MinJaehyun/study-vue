@@ -44,9 +44,14 @@ import Chapter12 from "@/components/study/220531/Chapter12.vue";
 import JsonLoadVue from "@/components/study/220602/JsonLoadVue.vue";
 import JsonTest1 from "@/components/study/220602/JsonTest1.vue";
 import OxQuiz from "@/components/study/220602/OxQuiz.vue";
+import EasyBoardPage from "@/pages/EasyBoardPage.vue";
 
 // routes 설정
 const routes = [
+  {
+    path: '/easyboardpage',
+    component: EasyBoardPage,
+  },
   {
     path: '/oxquiz',
     component: OxQuiz,
