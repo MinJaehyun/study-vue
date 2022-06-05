@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <table>
-      <thead>
+      <tr>
         <th v-for="(item, index) in header" :key="index">{{ item }}</th>
-      </thead>
+      </tr>
       <tbody>
         <tr v-for="(line, index) in ranking" :key="index">
           <td v-for="(item, index) in line" :key="index">{{ item }}</td>
@@ -23,7 +23,7 @@ export default defineComponent({
     return {
       header: ['프로그램 언어', 2011, 2012, 2013, 2014, 2015],
       ranking: [
-        ['jave', 1, 2, 1, 1, 16],
+        ['java', 1, 2, 1, 1, 16],
         ['c', 2, 1, 2, 2, 1],
         ['c++', 3, 4, 3, 3, 2],
         ['python', 4, 7, 6, 11, 23],
