@@ -25,20 +25,30 @@ export default defineComponent({
       loadData: '',
     };
   },
+  // obj 의 메서드 안에 this 는 obj 를 가리킨다..
+  // 메서드 안에 this 는 obj 를 가리킨다.
+  // 고로, onChangeFile 메서드 안에 함수로 감싸지지 않은 this 는 obj 이다
+  // 전역에 접근하기 위해서는??
+  // 임의 함수로 감싸서 this 사용한다
   methods: {
     onChangeFile(e: any){
+      console.log(typeof this) // object
+      // console.log(JSON.parse(JSON.stringify(this)))
       let file: FileReader = e.target.files[0];
       if (file) {
         let reader = new FileReader()
-        // eslint-disable-next-line @typescript-eslint/no-this-alias
-        // let vm = this;
-        reader.onload = function(e) {
-          let json = JSON.parse(e.target.result as string)
-          // console.log();
-          // 숙제 this 까지 설명하기, 아래 접근 안 되는 이유 설명하기
-          // this.loadData = json;
+        const testThis = function (): void {
+          // let vm = this;
+          console.log(this) //
+          // console.log(vm) // this 를 vm 에 담으면 뭘 할 수 있나?
+          reader.onload = function(e) {
+            let json = JSON.parse(e.target.result as string)
+            // console.log(typeof this)
+            // vm.loadData = json;
+          }
+          reader.readAsText(file as any)
         }
-        reader.readAsText(file as any)
+        testThis();
       }
     },
   },

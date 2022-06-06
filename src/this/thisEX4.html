@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this EX4</title>
+</head>
+<body>
+<script>
+    var value = 1;
+
+    var obj = {
+        value: 100,
+        foo: function() {
+            var that = this;              // this 와 that 는 obj 를 가리킨다.
+
+            console.log(this);            // obj
+            console.log(this.value);      // 100
+            function bar() {
+                console.log(this);       // window
+                console.log(this.value); // 1
+
+                console.log(that);       // obj
+                console.log(that.value); // 100
+            }
+            bar();
+        }
+    };
+
+    obj.foo();
+</script>
+</body>
+</html>
+<!--
+1. obj 의 메서드 foo 안에 this 는 obj 를 가리킨다
+2. 함수안에 this 는 window 를 가리킨다
+-->

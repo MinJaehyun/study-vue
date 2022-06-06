@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thisEX2</title>
+</head>
+<body>
+<script>
+    var foo = function () {
+        console.dir(this);
+    };
+
+    // 1. 함수 호출
+    foo(); // window
+    // window.foo();
+
+    // 2. 메소드 호출
+    var obj = { foo: foo };
+    obj.foo(); // obj         // foo: function(): void 를 호출한다.
+
+    // var obj2 = { foo: 'foo' };
+    // console.log(obj2.foo); // 'foo'      // 객체의 값을 가져온다
+
+    // 3. 생성자 함수 호출
+    var instance = new foo(); // instance
+    console.log(instance)
+
+    // 4. apply/call/bind 호출
+    var bar = { name: 'bar' };
+    foo.call(bar);   // bar
+    foo.apply(bar);  // bar
+    foo.bind(bar)(); // bar
+</script>
+</body>
+</html>
