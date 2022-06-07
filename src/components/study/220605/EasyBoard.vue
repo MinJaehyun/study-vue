@@ -38,10 +38,10 @@ interface testObj { // 인터페이스 참고하기
   id: string,       // id? 설정하면, 아래 testObj 의 id 는 없어도 된다(option)
   title: string,
   content: string,
-  searchCount: number,
+  searchCount: string,
 }
 interface dataObj {
-  loadBoardData: {content: string, title: string}[], // ts 배열 참고하기
+  loadBoardData: {content: string, title: string, searchCount: string}[], // ts 배열 참고하기
   testObj: { // testObj 의 각각의 속성의 타입을 명시할 수 있다.
     content: string;
     title: string;
@@ -58,6 +58,7 @@ export default defineComponent({
       loadBoardData: [{
         title: '',
         content: '',
+        searchCount: '',
       }],
       testObj: {
         title: '',
@@ -79,7 +80,7 @@ export default defineComponent({
         id: `${this.loadBoardData.length + 1}`, // id 는 문자열이므로 선언은 stirng 으로 한다
         title: this.testObj.title,
         content: this.testObj.content,
-        searchCount: 0
+        searchCount: ''
       };
     }
   },
@@ -129,31 +130,31 @@ export default defineComponent({
       this.loadBoardData[index].searchCount = String(Number(this.loadBoardData[index].searchCount) + 1)
     },
     // 게시글 삭제
-    onClickDeleteBoard(index: any): any {
+    onClickDeleteBoard(index: number): void {
       this.loadBoardData.splice(index, 1);
       // console.log(this.loadBoardData);
       // FIXME: 삭제 후 id 값이 재정렬 되야한다
     },
     // 게시글 생성
-    onclickWriteBoard(): any {
+    onclickWriteBoard(): void {
       this.mode = 'write'
     },
     // 게시글 제출
-    submitWriteBoard(): any {
+    submitWriteBoard(): void {
       this.loadBoardData.push(this.initializedWrite);
       this.inputTitle = '';
       this.inputTextarea = '';
       this.mode = 'read';
     },
     // 파일 선택 후 목록 불러오기
-    onChangeFileReader(e: { target: { files: FileReader[]; }; }): any {
+    onChangeFileReader(e: { target: { files: FileReader[]; }; }): void {
       let file = e.target.files[0];
       if(file) {
         let reader = new FileReader()
         // let vm = this;
         // this 를 화살표 함수에서 사용하면 전역 객체로 바인딩한다.
         reader.onload = (e) => {
-          let json = JSON.parse(e.target.result as string)
+          let json = JSON.parse(e.target?.result as string)
           this.loadBoardData = json.board[0];
           this.mode = 'read';
         }
@@ -185,4 +186,11 @@ export default defineComponent({
 2. EasyBoard.vue - ts 적용하기
 3. 함수가 return 이 없으면 undefined 또는 void 를 사용한다.
 4. FIXME: 128: 부터 타입 수정하기!!
+-->
+
+<!-- 157: TS2531: Object is possibly 'null'.
+- 객체가 비어 있을 수도 있는데 해당 객체의 내부 메소드를 사용하거나 내부 객체 키에 값을 넣어주려고 할 때 입니다.
+
+e.target 값이 있을 수도 비어 있을 수도 있다.
+이를 옵셔널체이닝을 사용하여 처리함
 -->
