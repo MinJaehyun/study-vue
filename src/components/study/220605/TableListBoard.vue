@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <table v-if="listBoard" class="table">
+    <table  class="table">
       <tr><th style="width: 200px" v-for="(item, index) in headers" :key="index">{{ item }}</th></tr>
       <tbody>
       <tr v-for="(line, index) in loadBoardData" :key="index">
@@ -11,7 +11,7 @@
       </tr>
       </tbody>
     </table>
-    <button v-if="listBoard" @click="$emit('onclickWriteBoard')">글쓰기</button>
+    <button @click="$emit('onclickWriteBoard')">글쓰기</button>
   </div>
 </template>
 
@@ -21,12 +21,13 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'TableListBoard',
   props: {
-    headers: Array,
     loadBoardData: Object,
-    listBoard: Boolean,
-    writeBool: Boolean,
-    detailBoard: Boolean,
   },
+  data() {
+    return {
+      headers: ['글 번호', '글 제목', '조회수']
+    }
+  }
 });
 </script>
 <style scoped>

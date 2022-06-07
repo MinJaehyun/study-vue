@@ -49,7 +49,7 @@ import EasyBoardPage from "@/pages/EasyBoardPage.vue";
 // routes 설정
 const routes = [
   {
-    path: '/easyboardpage',
+    path: '/easyboard',
     component: EasyBoardPage,
   },
   {

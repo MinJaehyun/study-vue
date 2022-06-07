@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="submitWriteBoard" class="container" v-if="writeBool">
+    <form @submit.prevent="submitWriteBoard" class="container" >
       <label>글제목: </label>
       <input type="text" @change="setInputText">
       <div>
@@ -18,8 +18,6 @@ export default defineComponent({
   name: 'WriteBoard',
   props: {
     writeBool: Boolean,
-    inputTitle: String,
-    inputTextarea: String,
   },
   methods: {
     setInputText(e: any){

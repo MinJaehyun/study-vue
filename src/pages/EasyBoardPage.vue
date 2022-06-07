@@ -1,6 +1,6 @@
 <template>
   <div>
-    <EasyBoard></EasyBoard>
+    <EasyBoard/>
   </div>
 </template>
 
