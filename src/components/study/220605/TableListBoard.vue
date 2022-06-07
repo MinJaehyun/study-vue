@@ -16,12 +16,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from "vue";
 
 export default defineComponent({
   name: 'TableListBoard',
   props: {
-    loadBoardData: Object,
+    loadBoardData: Object as PropType<any>,
   },
   data() {
     return {

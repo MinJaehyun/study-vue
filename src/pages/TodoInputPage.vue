@@ -28,7 +28,7 @@ export default defineComponent({
   methods: {
     inputValue(value: string) {
       // console.log('value : ', value);
-      this.todos.push({ text: value });
+      // this.todos.push({ text: value });
     },
   },
 });

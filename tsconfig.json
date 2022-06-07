@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-//    "strict": true,
+    "strict": true,
     "noImplicitAny": true,
     "jsx": "preserve",
     "importHelpers": true,
@@ -10,7 +10,6 @@
     "esModuleInterop":  true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,

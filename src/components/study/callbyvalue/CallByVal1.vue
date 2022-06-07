@@ -22,7 +22,7 @@ export default defineComponent({
     //0x1111 = {a: 5, b: 1}
     const num4 = this.num1;
 
-    num4.b=1
+    // num4.b=1
     console.log('equal:', this.num1 === num4);
     console.log('num1:', this.num1)
 

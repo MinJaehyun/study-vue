@@ -34,11 +34,31 @@ import TableListBoard from "@/components/study/220605/TableListBoard.vue";
 import WriteBoard from "@/components/study/220605/WriteBoard.vue"
 import DetailBoard from "@/components/study/220605/DetailBoard.vue";
 
+interface testObj { // 인터페이스 참고하기
+  id: string,       // id? 설정하면, 아래 testObj 의 id 는 없어도 된다(option)
+  title: string,
+  content: string,
+  searchCount: number,
+}
+interface dataObj {
+  loadBoardData: {content: string, title: string}[], // ts 배열 참고하기
+  testObj: { // testObj 의 각각의 속성의 타입을 명시할 수 있다.
+    content: string;
+    title: string;
+  },
+  inputTitle: string,
+  inputTextarea: string,
+  mode: string
+}
+
 export default defineComponent({
   name: 'EasyBoard',
-  data() {
+  data(): dataObj {  // 함수 뒤 ts 는 return 타입을 명시한다.
     return {
-      loadBoardData: null,
+      loadBoardData: [{
+        title: '',
+        content: '',
+      }],
       testObj: {
         title: '',
         content: '',
@@ -46,9 +66,6 @@ export default defineComponent({
       inputTitle: '',
       inputTextarea: '',
       mode: '',
-      // listBoard: false,
-      // writeBool: false,
-      // detailBoard: false,
     };
   },
   components: {
@@ -57,28 +74,30 @@ export default defineComponent({
     DetailBoard,
   },
   computed: {
-    initializedWrite() {
+    initializedWrite(): testObj {
       return {
-        id: `${this.loadBoardData.length + 1}`,
+        id: `${this.loadBoardData.length + 1}`, // id 는 문자열이므로 선언은 stirng 으로 한다
         title: this.testObj.title,
         content: this.testObj.content,
-        searchCount: '0' };
+        searchCount: 0
+      };
     }
   },
   methods: {
-    eventInputTitle(data: any){
-      this.testObj.title = data
+    eventInputTitle(data: string): string{
+      return this.testObj.title = data;
     },
-    eventInputTextarea(data: any){
-      this.testObj.content = data
+    eventInputTextarea(data: string): string{
+      return this.testObj.content = data;
     },
     // 리스트 저장하기
-    onClickSaveList(){
-      let data = this.loadBoardData
-      if (data.length === 0) return;
+    onClickSaveList(): undefined {
+      let data: string = '' as string;  // NOTE: 이 부분 학습하기!!
+      if (this.loadBoardData.length === 0) return;
       let filename = 'src/assets/data/220605/board.json';
-      if (typeof data === 'object') {
+      if (typeof data === 'object') { // 위에 string 설정하였으므로 여기서 타입체크 불필요하다.
          data = JSON.stringify(data, undefined, 2);
+         // 위 data 는 문자열이 아니여야 한다. 이 뜻은 JSON.stringify(data, undefined, 2) 이 문자열이 아니여야 한다는 의미이다.
          // console.log(data) // json 문자열
       }
       let blob = new Blob([data], {type: 'application/json'});
@@ -87,69 +106,47 @@ export default defineComponent({
       // console.log(a)
       // <a download="src/assets/data/220605/board.json" href="blob:http://localhost:8080/0b19f052-09c7-435c-b9b3-f1d4bec968a3" data-downloadurl="text/json:src/assets/data/board.json:blob:http://localhost:8080/0b19f052-09c7-435c-b9b3-f1d4bec968a3"></a>
       a.download = filename;
-      // console.log(a)
       a.href = window.URL.createObjectURL(blob);
       // console.log(a)
       // <a download="src/assets/data/220605/board.json" href="blob:http://localhost:8080/1a8c243c-547f-4849-af46-b66a671388f1" data-downloadurl="text/json:src/assets/data/220605/board.json:blob:http://localhost:8080/1a8c243c-547f-4849-af46-b66a671388f1"></a>
       a.dataset.downloadurl = ['application/json', a.download, a.href].join(':');
       console.log(a)
-      a.click()
+      a.click()  // 클릭 시, 브라우저에 저장된다. json 데이터에는 저장되지 않는다.
     },
     // 게시글 목록 불러오기
-    onClickGetList(){
+    onClickGetList(): void {
       this.mode = 'read';
-      // this.listBoard = true;
-      // this.writeBool = false;
-      // this.detailBoard = false;
     },
     // 게시글 상세 화면 설정 및 실행
-    onClickDetailBoard(index: any){
+    onClickDetailBoard(index: number): void {
       // 화면 띄우기
-      // this.listBoard = false;
-      // this.writeBool = false;
       this.mode = 'detail';
-      // this.detailBoard = true;
       this.onChangeDetailBoard(index)
     },
     // 게시글 상세 화면 띄우기
-    onChangeDetailBoard(index: any){
+    onChangeDetailBoard(index: number): void {
       this.testObj = this.loadBoardData[index];
-      // this.inputTitle = this.loadBoardData[index].title;
-      // this.inputTextarea = this.loadBoardData[index].content;
       this.loadBoardData[index].searchCount = String(Number(this.loadBoardData[index].searchCount) + 1)
-      // console.log(typeof this.loadBoardData[index])
     },
     // 게시글 삭제
-    onClickDeleteBoard(index: any){
+    onClickDeleteBoard(index: any): any {
       this.loadBoardData.splice(index, 1);
       // console.log(this.loadBoardData);
       // FIXME: 삭제 후 id 값이 재정렬 되야한다
     },
     // 게시글 생성
-    onclickWriteBoard(){
+    onclickWriteBoard(): any {
       this.mode = 'write'
-      // this.writeBool = true;
-      // this.listBoard = false;
     },
     // 게시글 제출
-    submitWriteBoard(){
-      // let obj = { id: `${this.loadBoardData.length + 1}`, title: this.inputTitle, content: this.inputTextarea, searchCount: '0' };
-      // let obj = { id: `${this.loadBoardData.length + 1}`, title: this.testObj.title, content: this.testObj.content, searchCount: '0' };
+    submitWriteBoard(): any {
       this.loadBoardData.push(this.initializedWrite);
       this.inputTitle = '';
       this.inputTextarea = '';
       this.mode = 'read';
-      // this.initInput();
-      // this.listBoard = true;
-      // this.writeBool = false;
     },
-    // 초기화
-    // initInput(){
-    //   this.inputTitle = '';
-    //   this.inputTextarea = '';
-    // },
     // 파일 선택 후 목록 불러오기
-    onChangeFileReader(e: { target: { files: FileReader[]; }; }){
+    onChangeFileReader(e: { target: { files: FileReader[]; }; }): any {
       let file = e.target.files[0];
       if(file) {
         let reader = new FileReader()
@@ -159,7 +156,6 @@ export default defineComponent({
           let json = JSON.parse(e.target.result as string)
           this.loadBoardData = json.board[0];
           this.mode = 'read';
-          // this.listBoard = true;
         }
         reader.readAsText(file as any)
       }
@@ -182,4 +178,11 @@ export default defineComponent({
 5. id++ 증가 처리되는 과정은 computed 로 처리한다.
 6. 초기화 코드 같은 경우, 재사용하는 곳이 1곳 이하이면 사용하지 않는다.
 7.
+-->
+
+<!-- 220607. 피드백
+1. 기본타입, 함수, 인터페이스, 타입 추론, 타입 호환, 타입 별칭, ts 배열 블로그 검색하기
+2. EasyBoard.vue - ts 적용하기
+3. 함수가 return 이 없으면 undefined 또는 void 를 사용한다.
+4. FIXME: 128: 부터 타입 수정하기!!
 -->
