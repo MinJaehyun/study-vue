@@ -1,62 +1,62 @@
 <template>
-  <div class="container">
-    <h1>버튼 누르면 리스트 증감하며 애니메이션 효과 주는 예제</h1>
-    <transition-group>
-      <li v-for="(flower, index) in flowers" :key="index" >{{ flower }}</li>
-    </transition-group>
-    <input type="text" v-model="inputFlower">
-    <button @click="addFlower">추가</button>
-    <div>
-      <button @click="deleteLastFlower">맨 뒤 1개 삭제</button>
-    </div>
-  </div>
+	<div class="container">
+		<h1>버튼 누르면 리스트 증감하며 애니메이션 효과 주는 예제</h1>
+		<transition-group>
+			<li v-for="(flower, index) in flowers" :key="index">{{ flower }}</li>
+		</transition-group>
+		<input type="text" v-model="inputFlower" />
+		<button @click="addFlower">추가</button>
+		<div>
+			<button @click="deleteLastFlower">맨 뒤 1개 삭제</button>
+		</div>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'TransTest2',
-  data() {
-    return {
-      inputFlower: '',
-      flowers: ['벚꽃', '산수유', '진달래', '철죽'],
-    };
-  },
-  methods: {
-    addFlower() {
-      this.flowers.push(this.inputFlower)
-    },
-    deleteLastFlower() {
-      // console.log(this.flowers.length)
-      this.flowers.splice(this.flowers.length - 1, 1)
-    },
-  },
+	name: 'TransTest2',
+	data() {
+		return {
+			inputFlower: '',
+			flowers: ['벚꽃', '산수유', '진달래', '철죽'],
+		};
+	},
+	methods: {
+		addFlower() {
+			this.flowers.push(this.inputFlower);
+		},
+		deleteLastFlower() {
+			// console.log(this.flowers.length)
+			this.flowers.splice(this.flowers.length - 1, 1);
+		},
+	},
 });
 </script>
 <style scoped>
 .v-enter-from {
-  opacity: 0;
+	opacity: 0;
 }
 .v-enter-active {
-  transition: 1.5s;
+	transition: 1.5s;
 }
 .v-enter-to {
-  opacity: 1;
-  transform: translateY(-5px);
+	opacity: 1;
+	transform: translateY(-5px);
 }
 .v-leave-from {
-  opacity: 1;
+	opacity: 1;
 }
 .v-leave-active {
-  transition: 1.5s;
+	transition: 1.5s;
 }
 .v-leave-to {
-  opacity: 0;
-  transform: translateY(15px);
+	opacity: 0;
+	transform: translateY(15px);
 }
 .container {
-  text-align: left;
+	text-align: left;
 }
 </style>
 <!--

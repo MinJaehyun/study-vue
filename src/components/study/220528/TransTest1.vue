@@ -1,48 +1,47 @@
 <template>
-  <div>
-    <h1>체크박스로 표시/비표시에 애니메이션 효과 주는 예제</h1>
-    <label><input type="checkbox" v-model="aniCheck">변경</label>
-    <transition>
-      <p v-if="aniCheck">체크박스가 true 이므로 표시 상태이다</p>
-      <!-- <p v-else>체크박스가 false 이므로 비표시 상태이다</p>-->
-    </transition>
-  </div>
+	<div>
+		<h1>체크박스로 표시/비표시에 애니메이션 효과 주는 예제</h1>
+		<label><input type="checkbox" v-model="aniCheck" />변경</label>
+		<transition>
+			<p v-if="aniCheck">체크박스가 true 이므로 표시 상태이다</p>
+			<!-- <p v-else>체크박스가 false 이므로 비표시 상태이다</p>-->
+		</transition>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'TransTest1',
-  data() {
-    return {
-      aniCheck: false,
-    };
-  },
-  methods: {},
+	name: 'TransTest1',
+	data() {
+		return {
+			aniCheck: false,
+		};
+	},
+	methods: {},
 });
 </script>
 <style>
 .v-enter-from {
-  opacity: 0;
+	opacity: 0;
 }
 .v-enter-active {
-  transition: 2.5s;
+	transition: 2.5s;
 }
 .v-enter-to {
-  opacity: 1;
+	opacity: 1;
 }
 
 .v-leave-from {
-  opacity: 1;
+	opacity: 1;
 }
 .v-leave-active {
-  transition: 1.5s;
+	transition: 1.5s;
 }
 .v-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
-
 </style>
 <!-- NOTE: Vue 2 버전일 경우 아래 설정해야 하고, Vue 3 버전일 경우 하단을 참고한다.
 1. v-enter 관련

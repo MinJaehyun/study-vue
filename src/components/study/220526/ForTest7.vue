@@ -1,34 +1,34 @@
 <template>
-  <div>
-    <h1>짝수만 표시하는 예제</h1>
-    <template v-for="(item, index) in items" :key="index">
-      <p v-if="items">
-        {{ item }}
-      </p>
-    </template>
-    <button @click="evenFunction">짝수만 표시</button>
-  </div>
+	<div>
+		<h1>짝수만 표시하는 예제</h1>
+		<template v-for="(item, index) in items" :key="index">
+			<p v-if="items">
+				{{ item }}
+			</p>
+		</template>
+		<button @click="evenFunction">짝수만 표시</button>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'ForTest7',
-  data() {
-    return {
-      items: [1, 2, 3, 4, 5, 6],
-    };
-  },
-  methods: {
-    evenFunction() {
-      // TS 선언하는 부분 (number 이면서 array 을 표현)
-      const newItems: number[] = this.items.filter((item: number) => {
-        return item % 2 === 0;
-      });
-      this.items = newItems;
-    },
-  },
+	name: 'ForTest7',
+	data() {
+		return {
+			items: [1, 2, 3, 4, 5, 6],
+		};
+	},
+	methods: {
+		evenFunction() {
+			// TS 선언하는 부분 (number 이면서 array 을 표현)
+			const newItems: number[] = this.items.filter((item: number) => {
+				return item % 2 === 0;
+			});
+			this.items = newItems;
+		},
+	},
 });
 </script>
 

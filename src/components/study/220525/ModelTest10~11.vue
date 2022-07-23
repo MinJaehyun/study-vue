@@ -1,32 +1,32 @@
 <template>
-  <div>
-    <!-- @input, @change 차이점? -->
-    <!-- @input 는 값이 변경될 때마다 실행된다. @change 는 변경이 완료된 값을 실행한다. -->
-    <input v-model.lazy.trim="myText" @change="test" />
-    <p>입력후 표시 {{ myText }}</p>
-    <hr />
-    <input v-model="myNumber" type="number" />
-    <p>100을 더해서 표시: {{ 100 + myNumber }}</p>
-  </div>
+	<div>
+		<!-- @input, @change 차이점? -->
+		<!-- @input 는 값이 변경될 때마다 실행된다. @change 는 변경이 완료된 값을 실행한다. -->
+		<input v-model.lazy.trim="myText" @change="test" />
+		<p>입력후 표시 {{ myText }}</p>
+		<hr />
+		<input v-model="myNumber" type="number" />
+		<p>100을 더해서 표시: {{ 100 + myNumber }}</p>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Modeltest10~11_',
-  data() {
-    return {
-      myText: '',
-      myNumber: 0,
-    };
-  },
-  methods: {
-    // 1
-    test(e: any) {
-      console.log(e.target.value);
-    },
-  },
+	name: 'Modeltest10~11_',
+	data() {
+		return {
+			myText: '',
+			myNumber: 0,
+		};
+	},
+	methods: {
+		// 1
+		test(e: any) {
+			console.log(e.target.value);
+		},
+	},
 });
 </script>
 

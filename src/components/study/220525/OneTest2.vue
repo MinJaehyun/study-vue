@@ -1,25 +1,25 @@
 <template>
-  <div>
-    <button :disabled="isClick" @click="onClick">좋아~!</button>
-  </div>
+	<div>
+		<button :disabled="isClick" @click="onClick">좋아~!</button>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'OneTest2',
-  data() {
-    return {
-      isClick: false,
-    };
-  },
-  methods: {
-    onClick() {
-      this.isClick = true;
-      alert('좋아~');
-    },
-  },
+	name: 'OneTest2',
+	data() {
+		return {
+			isClick: false,
+		};
+	},
+	methods: {
+		onClick() {
+			this.isClick = true;
+			alert('좋아~');
+		},
+	},
 });
 </script>
 

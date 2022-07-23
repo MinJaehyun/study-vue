@@ -1,26 +1,30 @@
 <template>
-  <div>
-    <h1>컴포넌트를 숫자 출력</h1>
-    <OddAndEven v-for="(numItem, index) in numberList" :key="index" :numItem="numItem"></OddAndEven>
-  </div>
+	<div>
+		<h1>컴포넌트를 숫자 출력</h1>
+		<OddAndEven
+			v-for="(numItem, index) in numberList"
+			:key="index"
+			:numItem="numItem"
+		></OddAndEven>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import OddAndEven from "@/components/study/220531/OddAndEven.vue";
+import OddAndEven from '@/components/study/220531/OddAndEven.vue';
 
 export default defineComponent({
-  name: 'Chapter12_',
-  data() {
-    return {
-      numberList: [1, 2, 3, 4],
-    };
-  },
-  methods: {},
-  components: {
-    // eslint-disable-next-line vue/no-unused-components
-    OddAndEven
-  },
+	name: 'Chapter12_',
+	data() {
+		return {
+			numberList: [1, 2, 3, 4],
+		};
+	},
+	methods: {},
+	components: {
+		// eslint-disable-next-line vue/no-unused-components
+		OddAndEven,
+	},
 });
 </script>
 

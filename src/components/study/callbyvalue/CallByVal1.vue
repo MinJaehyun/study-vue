@@ -1,52 +1,52 @@
 <template>
-  <div>
-    <h1>call by value 예제 1.</h1>
-    <p>변경 전 num1: {{ num1 }} </p>
-    <p>변경 전 num2: {{ num2 }} </p>
-    <p>변경 후 num1 + num2 =  {{ sum(num1, num2) }}</p>
-  </div>
+	<div>
+		<h1>call by value 예제 1.</h1>
+		<p>변경 전 num1: {{ num1 }}</p>
+		<p>변경 전 num2: {{ num2 }}</p>
+		<p>변경 후 num1 + num2 = {{ sum(num1, num2) }}</p>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'CallByVal',
-  data() {
-    return {
-      num1: {a: 1},
-      num2: 2,
-    };
-  },
-  created() {
-    //0x1111 = {a: 5, b: 1}
-    const num4 = this.num1;
+	name: 'CallByVal',
+	data() {
+		return {
+			num1: { a: 1 },
+			num2: 2,
+		};
+	},
+	created() {
+		//0x1111 = {a: 5, b: 1}
+		const num4 = this.num1;
 
-    // num4.b=1
-    console.log('equal:', this.num1 === num4);
-    console.log('num1:', this.num1)
+		// num4.b=1
+		console.log('equal:', this.num1 === num4);
+		console.log('num1:', this.num1);
 
-    this.sum2({}, num4);
+		this.sum2({}, num4);
 
-    console.log('num4:', num4)
-  },
-  methods: {
-    sum(num1: number, num2: number) {
-      // 스코프에 의해 변수값은 함수를 벗어날 수 없다.
-      num1 = 0;
-      num2 = 0;
-      const result = num1 + num2;
-      console.log('num1 변경 후:', num1);
-      console.log('num2 변경 후:', num2);
-      return result;
-    },
-    sum2(num1: any, num2: any) {
-      const test = JSON.parse(JSON.stringify(num2));
+		console.log('num4:', num4);
+	},
+	methods: {
+		sum(num1: number, num2: number) {
+			// 스코프에 의해 변수값은 함수를 벗어날 수 없다.
+			num1 = 0;
+			num2 = 0;
+			const result = num1 + num2;
+			console.log('num1 변경 후:', num1);
+			console.log('num2 변경 후:', num2);
+			return result;
+		},
+		sum2(num1: any, num2: any) {
+			const test = JSON.parse(JSON.stringify(num2));
 
-      console.log('hello', test)
-      test.c = 1
-    }
-  },
+			console.log('hello', test);
+			test.c = 1;
+		},
+	},
 });
 </script>
 

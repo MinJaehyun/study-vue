@@ -1,30 +1,30 @@
 <template>
-  <div>
-    <h1>버튼 클릭 시, sort 하는 예제</h1>
-    <li v-for="(item, index) in items" :key="index">{{ item }}</li>
-    <button @click="sortFunction(items)">sort</button>
-  </div>
+	<div>
+		<h1>버튼 클릭 시, sort 하는 예제</h1>
+		<li v-for="(item, index) in items" :key="index">{{ item }}</li>
+		<button @click="sortFunction(items)">sort</button>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'ForTest6',
-  data() {
-    return {
-      items: ['one', 'two', 'three', 'four'],
-    };
-  },
-  methods: {
-    sortFunction(data: any) {
-      // NOTE: JSON.parse, JSON.stringify 기능 검색하기
-      // const test = JSON.parse(JSON.stringify(data));
-      data.sort(function (a: any, b: any) {
-        return a < b ? -1 : 1;
-      });
-    },
-  },
+	name: 'ForTest6',
+	data() {
+		return {
+			items: ['one', 'two', 'three', 'four'],
+		};
+	},
+	methods: {
+		sortFunction(data: any) {
+			// NOTE: JSON.parse, JSON.stringify 기능 검색하기
+			// const test = JSON.parse(JSON.stringify(data));
+			data.sort(function (a: any, b: any) {
+				return a < b ? -1 : 1;
+			});
+		},
+	},
 });
 </script>
 

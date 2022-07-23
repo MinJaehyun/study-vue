@@ -24,7 +24,7 @@ module.exports = {
 			'error',
 			{
 				printWidth: 80,
-				endOfLine: auto,
+				endOfLine: 'auto',
 				singleQuote: true,
 				semi: true,
 				useTabs: true,
@@ -38,5 +38,5 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 2020,
 	},
-	ignorePatterns: settings.json,
+	// ignorePatterns: [settings.json],
 };
