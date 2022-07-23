@@ -9,7 +9,7 @@
       <p>해설: {{ item.body }}</p>
     </div>
     <button @click="sortFunction">소트</button>
-    <button @click="suffleData">셔플</button>
+    <button @click="shuffleData">셔플</button>
   </div>
 </template>
 
@@ -20,11 +20,11 @@ export default defineComponent({
   name: 'JsonTest1',
   data() {
     return {
-      loadData: '',
+      loadData: [],
     };
   },
   methods: {
-    suffleData(){
+    shuffleData(){
       this.loadData.sort(() => Math.random() - 0.5);
       // console.log(Math.random());
     },
@@ -36,14 +36,14 @@ export default defineComponent({
         return a.title > b.title ? 1 : -1;
       })
     },
-    onChangeFile(e: { target: { files: FileReader[]; }; }) {
+    onChangeFile(e: any) {
       let file: FileReader = e.target.files[0];
       if (file) {
         let reader = new FileReader()
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         let vm = this;
         reader.onload = (e) => {
-          let json = JSON.parse(e.target.result as string)
+          let json = JSON.parse(e.target?.result as string)
           vm.loadData = json;
           // console.log(vm);
         }

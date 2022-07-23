@@ -31,7 +31,7 @@ export default defineComponent({
   name: 'OxQuiz',
   data() {
     return {
-      loadData: '',
+      loadData: [],
       sumScore: 0,
     };
   },
@@ -61,7 +61,7 @@ export default defineComponent({
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         let vm = this;
         reader.onload = function(e) {
-          let json = JSON.parse(e.target.result as string)
+          let json = JSON.parse(e.target?.result as string)
           vm.loadData = json;
         }
         reader.readAsText(file as any)
@@ -70,7 +70,6 @@ export default defineComponent({
   },
 });
 </script>
-R
 <style scoped></style>
 <!--
 1. checkbox 는 선택 시, true 값
