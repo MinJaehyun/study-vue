@@ -1,11 +1,15 @@
 # TodoList Project
 
 ## 주의 사항
-    * 진행 상황 슬랙에 공유하기
     * 컨벤션: 카멜케이스
     * 공식문서 또는 공신력 블로그만 보도록 노력하기
     * JS, TS, HTML 학습하기
         - https://typescript-kr.github.io/ (기본내용, 고급 일단 제외)
+
+### 07월 23일
+~~1. arrayMethods - filter, reduce 불필요한 파일 삭제~~
+    3. this - 내용도 노션, 깃헙으로 이동하기
+    4. 05월 17일부터 ~ ?일까지 정리.
 
 ### 06월 05일
     1. 게시판 만들기
@@ -56,12 +60,12 @@
     2. 아래는 당장은 학습하지 않는다
         - setter, 동적 전달인자, Render
     3. 스타일 가이드 
-        - [v] nameing (우선순위 A 규칙: 필수)
+        - [v] naming (우선순위 A 규칙: 필수)
     4. 책에 있는 챕터들도 같이 진행하기
         - 위 개념에 대한 예제 같이 진행하기
-    5. reduce, filter 차이점 이해하는지?
-        - reduce: [], String, Number
-        - filter: [] 
+~~5. reduce, filter 차이점 이해하는지?~~
+    ~~- reduce: [], String, Number~~
+    ~~- filter: []~~ 
 
 ### 05월 21일
     1. array methods - reduce, filter 학습
@@ -72,8 +76,8 @@
         - 동적 라우팅 사용하기 위해서는 여러 id 를 가진 page 가 존재해야 한다.
 
 ### 05월 19일
-    1. todoinput 에 ts 를 적용하는 프로젝트를 진행 중입니다.
-        - [v] /todoinput URL 접근 시, pages -> components 순으로 컴포넌트를 불러옴니다.
+    1. todoInput 에 ts 를 적용하는 프로젝트를 진행 중입니다.
+        - [v] /todoInput URL 접근 시, pages -> components 순으로 컴포넌트를 불러옴니다.
         - [v] mvvm 구조 설정
         - [] input 값 비어있으면 입력 안되게 설정하기
 
@@ -91,9 +95,9 @@
     1. [v] 환경 설정 
         - eslint, prettier 설정
     2. 개인 프로젝트 진행하기
-        - todolist
+        - todoList
     3. typescript 관련 내용 학습하기
         - 핸드북 참고하기
         - typescript 관련 내용 검색하기
-    4. [v] source tree 사용법 숙지
-        - add, commit, push, branch, merge
+~~4. [v] source tree 사용법 숙지~~
+    ~~- add, commit, push, branch, merge~~
