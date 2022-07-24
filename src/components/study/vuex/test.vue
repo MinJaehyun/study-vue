@@ -4,7 +4,7 @@
   <button @click="setSyncCounter">비동기적 카운터 증가</button>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'test-vuex',
   methods: {
