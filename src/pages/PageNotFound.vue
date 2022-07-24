@@ -1,15 +1,15 @@
 <template>
-	<div>
-		<PageNotFound />
-	</div>
+  <div>
+    <PageNotFound />
+  </div>
 </template>
 
 <script lang="ts">
 import PageNotFound from '@/components/common/PageNotFound.vue';
 export default {
-	components: {
-		PageNotFound,
-	},
+  components: {
+    PageNotFound,
+  },
 };
 </script>
 

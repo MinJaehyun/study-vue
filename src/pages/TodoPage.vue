@@ -1,10 +1,10 @@
 <template>
-	<div>parameter: {{ $route.params.id }}</div>
+  <div>parameter: {{ $route.params.id }}</div>
 </template>
 
 <script lang="ts">
 export default {
-	name: 'TodoPage',
+  name: 'TodoPage',
 };
 </script>
 
