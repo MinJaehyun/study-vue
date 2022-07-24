@@ -44,7 +44,7 @@ import { createWebHistory, createRouter, RouterOptions } from 'vue-router';
 // import EasyBoardPage from "@/pages/EasyBoardPage.vue";
 
 // routes 설정
-const routes = [
+const routes: any = [
   // {
   //   path: '/easyboard',
   //   component: EasyBoardPage,
