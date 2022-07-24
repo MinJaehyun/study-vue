@@ -2,7 +2,7 @@
   <div>
     <h1>배열 데이터를 컴포넌트로 나열하는 예제</h1>
     <div>
-      <input type="file" @change="onChangeFile">
+      <input type="file" @change="onChangeFile" />
     </div>
     <div v-for="(item, index) in loadData" :key="index">
       <p style="background-color: gray">{{ item.title }}</p>
@@ -24,30 +24,30 @@ export default defineComponent({
     };
   },
   methods: {
-    shuffleData(){
+    shuffleData() {
       this.loadData.sort(() => Math.random() - 0.5);
       // console.log(Math.random());
     },
-    sortFunction(){
+    sortFunction() {
       // 오름차순 정렬
       this.loadData.sort((a: any, b: any) => {
         // console.log(a.title);
         console.log(a);
         return a.title > b.title ? 1 : -1;
-      })
+      });
     },
     onChangeFile(e: any) {
       let file: FileReader = e.target.files[0];
       if (file) {
-        let reader = new FileReader()
+        let reader = new FileReader();
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         let vm = this;
-        reader.onload = (e) => {
-          let json = JSON.parse(e.target?.result as string)
+        reader.onload = e => {
+          let json = JSON.parse(e.target?.result as string);
           vm.loadData = json;
           // console.log(vm);
-        }
-        reader.readAsText(file as any)
+        };
+        reader.readAsText(file as any);
       }
     },
   },

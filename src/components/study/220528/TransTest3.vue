@@ -16,18 +16,18 @@ export default defineComponent({
   name: 'TransTest3',
   data() {
     return {
-      numList: ['one','two','three','four','five'],
-      newShuffleData: []
+      numList: ['one', 'two', 'three', 'four', 'five'],
+      newShuffleData: [],
     };
   },
   methods: {
     sortNumList() {
-      this.numList.sort((a: any, b: any)=> {
-        return a < b ? -1 : 1
-      })
+      this.numList.sort((a: any, b: any) => {
+        return a < b ? -1 : 1;
+      });
     },
     shuffleData2() {
-      this.numList.sort(()=> Math.random() - 1);
+      this.numList.sort(() => Math.random() - 1);
       console.log('test', this.numList);
     },
   },

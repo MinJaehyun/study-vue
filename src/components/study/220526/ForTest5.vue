@@ -1,7 +1,11 @@
 <template>
   <div>
     <p v-for="(item, index) in myArr" :key="index">{{ item }}</p>
-    <div><button @click="testObj(myArr.length, 0, '맨 뒤 추가')">맨 뒤 추가</button></div>
+    <div>
+      <button @click="testObj(myArr.length, 0, '맨 뒤 추가')">
+        맨 뒤 추가
+      </button>
+    </div>
     <div><button @click="testObj(3, 0, '추가')">네 번째에 추가</button></div>
     <div><button @click="testObj(0, 1, '변경')">첫 번째를 변경</button></div>
     <div><button @click="testObj(1, 1)">두 번째를 삭제</button></div>

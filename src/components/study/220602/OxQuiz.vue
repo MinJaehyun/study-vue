@@ -2,25 +2,35 @@
   <div>
     <h1>퀴즈 맞추기</h1>
     <div v-for="(item, index) in loadData" :key="index">
-      <span>문제 {{ index + 1 }}. {{ item.text }} (배점: {{ item.score }}) </span>
+      <span
+        >문제 {{ index + 1 }}. {{ item.text }} (배점: {{ item.score }})
+      </span>
       <div>
         정답:
         <!-- {{ item.options }} -->
-        <span v-for="(option, optionsIndex) in item.options" :key="index + optionsIndex" >
+        <span
+          v-for="(option, optionsIndex) in item.options"
+          :key="index + optionsIndex"
+        >
           <!-- :value="option" 지정하는 부분도 이해하기!! -->
           <!-- :name="" 이해하기        -->
           <!-- v-model="item.temp" 이해하기         -->
-          <input type="radio" :value="option" :name="item.name" v-model="item.temp"/>{{option}}
+          <input
+            type="radio"
+            :value="option"
+            :name="item.name"
+            v-model="item.temp"
+          />{{ option }}
         </span>
       </div>
-        <!-- :value="true" 지정했을 경우, radio 선택 시, 해당 :value 에 설정한 값을 v-model 에 지정한 변수에 담기게 된다 -->
-        <!-- {{ item.temp }} -->
-      <br>
-        <!-- {{ typeof item.temp}} -->
+      <!-- :value="true" 지정했을 경우, radio 선택 시, 해당 :value 에 설정한 값을 v-model 에 지정한 변수에 담기게 된다 -->
+      <!-- {{ item.temp }} -->
+      <br />
+      <!-- {{ typeof item.temp}} -->
     </div>
     <p><button @click="onClickAnswer">정답 제출하기</button></p>
     <p>총 득점: {{ sumScore }}</p>
-    <input type="file" @change="onChangeFile">
+    <input type="file" @change="onChangeFile" />
   </div>
 </template>
 
@@ -36,15 +46,15 @@ export default defineComponent({
     };
   },
   methods: {
-    onClickAnswer(){
+    onClickAnswer() {
       // 방법1. :value 설정하여 간편하게 설정
       // 타입: 초기값 0 설정 했으므로 type 은 number.
       this.sumScore = this.loadData.reduce((prev: number, cur: any) => {
         if (cur.temp === cur.checked) {
-          prev += cur.score
+          prev += cur.score;
         }
-        return prev
-      }, 0)
+        return prev;
+      }, 0);
 
       // 방법2. JSON.parse 설정하여 문자열을 boolean 으로 변경하여 설정하는 방법
       // this.sumScore = this.loadData.reduce((prev: any, cur: any) => {
@@ -54,17 +64,17 @@ export default defineComponent({
       //   return prev
       // }, 0);
     },
-    onChangeFile(e: any){
+    onChangeFile(e: any) {
       let file: FileReader = e.target.files[0];
       if (file) {
-        let reader = new FileReader()
+        let reader = new FileReader();
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         let vm = this;
-        reader.onload = function(e) {
-          let json = JSON.parse(e.target?.result as string)
+        reader.onload = function (e) {
+          let json = JSON.parse(e.target?.result as string);
           vm.loadData = json;
-        }
-        reader.readAsText(file as any)
+        };
+        reader.readAsText(file as any);
       }
     },
   },

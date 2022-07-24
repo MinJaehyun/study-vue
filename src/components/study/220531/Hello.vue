@@ -28,8 +28,8 @@ export default defineComponent({
       this.count += 1;
     },
   },
-  created(){
-    this.myName
+  created() {
+    this.myName;
   },
 });
 </script>

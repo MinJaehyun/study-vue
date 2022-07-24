@@ -5,7 +5,9 @@
       표시
     </label>
     <p v-if="myVisible">체크박스 ON</p>
-    <p v-else :style="{ display: noneDisplay }">체크박스를 noneDisplay 처리함!</p>
+    <p v-else :style="{ display: noneDisplay }">
+      체크박스를 noneDisplay 처리함!
+    </p>
   </div>
 </template>
 

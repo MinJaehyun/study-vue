@@ -38,7 +38,7 @@ export default defineComponent({
     changeItem(index: any) {
       let change_num = this.numberList[index] + 100;
       // 재귀함수 알아보기
-      while(true) {
+      while (true) {
         // 1. 클릭 시, +100 증가값이 없으면 종료한다
         if (this.numberList.indexOf(change_num) === -1) {
           break;
@@ -47,7 +47,7 @@ export default defineComponent({
         else change_num += 1;
       }
       // 기존 값을 변경한다.
-      this.numberList.splice(index, 1, change_num)
+      this.numberList.splice(index, 1, change_num);
     },
     deleteItem(index: any) {
       // 해당 값을 삭제한다.
@@ -75,7 +75,6 @@ export default defineComponent({
     },
   },
 });
-
 </script>
 <style scoped></style>
 <!--재귀함수 알아보기-->

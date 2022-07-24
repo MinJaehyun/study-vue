@@ -1,8 +1,13 @@
 <template>
   <div class="container">
-    <label>글제목: <input type="text" :value="inputTitle" ></label>
+    <label>글제목: <input type="text" :value="inputTitle" /></label>
     <div>
-      <textarea :value="inputTextarea" cols="100" rows="10" style="margin: 10px;"></textarea>
+      <textarea
+        :value="inputTextarea"
+        cols="100"
+        rows="10"
+        style="margin: 10px"
+      ></textarea>
     </div>
     <button @click="$emit('onClickGetList')">목록</button>
   </div>

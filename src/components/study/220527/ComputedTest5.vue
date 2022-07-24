@@ -2,10 +2,10 @@
   <div>
     <h1>적색, 녹색, 청색 의 슬라이더를 움직이면 완성된 색을 표시하는 예제</h1>
     <!-- 색 설정하기 -->
-    <div :style="{backgroundColor: checkedColor}">{{ checkedColor }}</div>
-    <div><input type="range" v-model="red" min="0" max="255"></div>
-    <div><input type="range" v-model="green" min="0" max="255"></div>
-    <div><input type="range" v-model="blue" min="0" max="255"></div>
+    <div :style="{ backgroundColor: checkedColor }">{{ checkedColor }}</div>
+    <div><input type="range" v-model="red" min="0" max="255" /></div>
+    <div><input type="range" v-model="green" min="0" max="255" /></div>
+    <div><input type="range" v-model="blue" min="0" max="255" /></div>
   </div>
 </template>
 

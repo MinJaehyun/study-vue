@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>JSON 을 읽어들이는 예제</h1>
-    <input type="file" @change="onChangeFile">
+    <input type="file" @change="onChangeFile" />
     <p>읽어 들인 데이터: {{ loadData }}</p>
   </div>
 </template>
@@ -17,11 +17,11 @@ export default defineComponent({
     };
   },
   methods: {
-    onChangeFile(e: any){
+    onChangeFile(e: any) {
       // console.log(this) // object,
       let file: FileReader = e.target.files[0];
       if (file) {
-        let reader = new FileReader()
+        let reader = new FileReader();
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         let vm = this;
         // 요약:
@@ -30,14 +30,13 @@ export default defineComponent({
         // 이를 방지하기 위해 변수에 담아 사용하여 obj 객체를 유지할 수 있다!
 
         // test 1. function
-        reader.onload = function(e)  {
-          let json = JSON.parse(e.target.result as string)
+        reader.onload = function (e) {
+          let json = JSON.parse(e.target.result as string);
           vm.loadData = json;
-          console.log(vm)
+          console.log(vm);
           // 질문하기: 콘솔에 Proxy 로 나타내는데, 이를 window 나 object 로 나타내는게 맞는지?
-        }
-        reader.readAsText(file as any)
-
+        };
+        reader.readAsText(file as any);
 
         // test 2. arrow function. 일반함수를 화살표함수로 변경 시, this 는 전역객체로 바인딩한다.
         // reader.onload = (e) => {

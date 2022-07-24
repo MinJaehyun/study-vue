@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>문자을 입력하면 남은 글자수를 표시하는 예제</h1>
-    <textarea v-model="textLength" maxlength="140" placeholder="140 글자 이내로 입력해 주세요."></textarea>
+    <textarea
+      v-model="textLength"
+      maxlength="140"
+      placeholder="140 글자 이내로 입력해 주세요."
+    ></textarea>
     <p>총 글자는 {{ totalLength }}</p>
     <p :style="{ color: colorComputed }" v-if="textRemind > 0">
       남은 글자는 {{ textRemind }}
@@ -33,13 +37,13 @@ export default defineComponent({
     },
     colorComputed() {
       // 남은 글자가 140 이하면 녹색, 이상이면 빨강 v-if
-      let color = ''
+      let color = '';
       if (this.textRemind <= 0) {
         color = 'red';
       } else {
         color = 'green';
       }
-      return color
+      return color;
     },
   },
   // watch: {

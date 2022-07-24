@@ -2,11 +2,16 @@
   <div>
     <h1>ToDo 추가 및 삭제</h1>
     <div v-for="(item, index) in items" :key="index">
-      <input type="checkbox" v-model="item.bool">
-      <span :class="{'line-throught': item.bool}">{{ item.text }}</span>
+      <input type="checkbox" v-model="item.bool" />
+      <span :class="{ 'line-throught': item.bool }">{{ item.text }}</span>
     </div>
-    <input type="text" placeholder="할일" v-model="inputText" @change="addInputFunc">
-    <br>
+    <input
+      type="text"
+      placeholder="할일"
+      v-model="inputText"
+      @change="addInputFunc"
+    />
+    <br />
     <button @click="checkedDeleteTodo">처리완료삭제</button>
     <hr />
     {{ checkedCount }} / {{ items.length }}
@@ -21,21 +26,21 @@ export default defineComponent({
   data() {
     return {
       items: [
-        { bool: false, text: '빵사기'},
-        { bool: false, text: '커피사기'},
+        { bool: false, text: '빵사기' },
+        { bool: false, text: '커피사기' },
       ],
       inputText: '',
     };
   },
   methods: {
-    addInputFunc(){
+    addInputFunc() {
       // { bool: false, text: '입력한 글은 v-model 을 통해 inputText 에 저장된다'}
       this.items.push({ bool: false, text: this.inputText });
       // console.log(this.items);
     },
     checkedDeleteTodo() {
       this.items = this.items.filter((item: any) => {
-        return item.bool === false
+        return item.bool === false;
       });
       // 체크 안 된 아이템만 기존 배열에 담는다.
     },
@@ -45,7 +50,7 @@ export default defineComponent({
       return this.items.filter((item: any) => {
         return item.bool;
       }).length;
-    }
+    },
   },
 });
 </script>

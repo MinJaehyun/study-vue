@@ -2,15 +2,16 @@
   <div>
     <h1>추가 기능 todolist</h1>
     <div v-for="(item, index) in items" :key="index">
-      <input type="checkbox" v-model="item.bool">
-      <span :class="{'strike-throught': item.bool}">
+      <input type="checkbox" v-model="item.bool" />
+      <span :class="{ 'strike-throught': item.bool }">
         {{ item.text }} (완료일 {{ item.dueDate }})
       </span>
       <button @click="dueDateExtension(index)">완료일 연장</button>
     </div>
     <br />
-    <input type="text" v-model="inputText1" @change="addInput1"> /
-    <input type="text" v-model="inputText2" @change="addInput1">(YYYYMMDD 형식으로 입력)
+    <input type="text" v-model="inputText1" @change="addInput1" /> /
+    <input type="text" v-model="inputText2" @change="addInput1" />(YYYYMMDD
+    형식으로 입력)
     <div>
       <button @click="checkedDelete">처리완료삭제</button>
       <button @click="ascTodo">할일순으로 정렬</button>
@@ -28,43 +29,47 @@ export default defineComponent({
   data() {
     return {
       items: [
-        { bool: false, text: '빵사기', dueDate: 20220615},
-        { bool: false, text: '커피사기', dueDate: 20230615},
+        { bool: false, text: '빵사기', dueDate: 20220615 },
+        { bool: false, text: '커피사기', dueDate: 20230615 },
       ],
       inputText1: '',
       inputText2: '',
     };
   },
   methods: {
-    dueDateExtension(index: number){
+    dueDateExtension(index: number) {
       // console.log(this.items[index]); // 기존값
       // 현재일 기준(result)으로 +1일 완료일을 처리한다
       // console.log(this.items[index].text);
       let date = new Date();
       let year = date.getFullYear();
-      let month = ("0" + (1 + date.getMonth())).slice(-2);
-      let day = ("0" + date.getDate()).slice(-2);
-      let result = Number(year + month + day) + 1
+      let month = ('0' + (1 + date.getMonth())).slice(-2);
+      let day = ('0' + date.getDate()).slice(-2);
+      let result = Number(year + month + day) + 1;
       // console.log(result); // 날짜만 +1 변경됨
-      this.items.splice(index, 1, { bool: false, text: this.items[index].text, dueDate: result })
+      this.items.splice(index, 1, {
+        bool: false,
+        text: this.items[index].text,
+        dueDate: result,
+      });
     },
-    dueDataTodo(){
+    dueDataTodo() {
       this.items.sort((a: any, b: any) => {
-        return a.dueDate < b.dueDate ? 1 : -1
+        return a.dueDate < b.dueDate ? 1 : -1;
       });
     },
     ascTodo() {
       // items.text.sort정렬
       this.items.sort((a: any, b: any) => {
-          return a.text > b.text ? 1 : -1
+        return a.text > b.text ? 1 : -1;
       });
     },
     checkedDelete() {
       this.items = this.items.filter((item: any) => {
-        return item.bool === false
-      })
+        return item.bool === false;
+      });
     },
-    addInput1(){
+    addInput1() {
       // 값은 둘 다 입력되어야 하며
       if (this.inputText1 !== '' && this.inputText2 !== '') {
         // 길이는 8 이어야 하며
@@ -81,8 +86,16 @@ export default defineComponent({
               // console.log(Number(this.inputText2));
               // console.log(this.inputText2.slice(0, 1));
               // console.log(this.inputText2.slice(0, 1) === '+');
-              if (this.inputText2.slice(0, 1) !== '+' && this.inputText2.slice(0, 1) !== '.' && this.inputText2.slice(0, 1) !== '0') {
-                this.items.push({ bool: false, text: this.inputText1, dueDate: this.inputText2})
+              if (
+                this.inputText2.slice(0, 1) !== '+' &&
+                this.inputText2.slice(0, 1) !== '.' &&
+                this.inputText2.slice(0, 1) !== '0'
+              ) {
+                this.items.push({
+                  bool: false,
+                  text: this.inputText1,
+                  dueDate: this.inputText2,
+                });
               }
             }
           }
@@ -93,8 +106,8 @@ export default defineComponent({
   computed: {
     checkedCount() {
       return this.items.filter((item: any) => {
-        return item.bool === true
-      }).length
+        return item.bool === true;
+      }).length;
     },
   },
 });

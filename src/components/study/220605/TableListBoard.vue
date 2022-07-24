@@ -1,14 +1,32 @@
 <template>
   <div class="container">
-    <table  class="table">
-      <tr><th style="width: 200px" v-for="(item, index) in headers" :key="index">{{ item }}</th></tr>
-      <tbody>
-      <tr v-for="(line, index) in loadBoardData" :key="index">
-        <td @click="$emit('onClickDetailBoard', index)" style="cursor: pointer">{{ line.id }}</td>
-        <td @click="$emit('onClickDetailBoard', index)" style="cursor: pointer">{{ line.title }}</td>
-        <td>{{ line.searchCount }}</td>
-        <input type="submit" @click="$emit('onClickDeleteBoard', index)" value="삭제">
+    <table class="table">
+      <tr>
+        <th style="width: 200px" v-for="(item, index) in headers" :key="index">
+          {{ item }}
+        </th>
       </tr>
+      <tbody>
+        <tr v-for="(line, index) in loadBoardData" :key="index">
+          <td
+            @click="$emit('onClickDetailBoard', index)"
+            style="cursor: pointer"
+          >
+            {{ line.id }}
+          </td>
+          <td
+            @click="$emit('onClickDetailBoard', index)"
+            style="cursor: pointer"
+          >
+            {{ line.title }}
+          </td>
+          <td>{{ line.searchCount }}</td>
+          <input
+            type="submit"
+            @click="$emit('onClickDeleteBoard', index)"
+            value="삭제"
+          />
+        </tr>
       </tbody>
     </table>
     <button @click="$emit('onclickWriteBoard')">글쓰기</button>
@@ -16,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
   name: 'TableListBoard',
@@ -25,9 +43,9 @@ export default defineComponent({
   },
   data() {
     return {
-      headers: ['글 번호', '글 제목', '조회수']
-    }
-  }
+      headers: ['글 번호', '글 제목', '조회수'],
+    };
+  },
 });
 </script>
 <style scoped>

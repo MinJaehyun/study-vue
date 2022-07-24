@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>문자 입력 시, 그 문자를 포함한 항목만 표시하는 예제</h1>
-    <input type="text" v-model.lazy="textStr">
+    <input type="text" v-model.lazy="textStr" />
     <ul>
       <li v-for="(item, index) in checkStr" :key="index">{{ item }}</li>
     </ul>
@@ -25,13 +25,13 @@ export default defineComponent({
     // 아래 checkStr 함수의 타입은 [] 이므로, 반복문을 돌려서 처리할 수 있다!!
     checkStr() {
       // 입력값을 배열을 돌면서(filter), 한글자 값이 있으면 해당 값을 배열에 넣는다
-      return this.myArr.filter((item: any)=>{
+      return this.myArr.filter((item: any) => {
         // console.log(item);
         if (item.indexOf(this.textStr) >= 0) {
           return true;
         }
-      })
-    }
+      });
+    },
   },
 });
 </script>

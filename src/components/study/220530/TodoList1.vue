@@ -6,11 +6,11 @@
       1. items.checked 로 접근하면 모든 체크가 선택된다.
       2. item.checked 로 접근해야 체크가 하나씩 선택된다.
       -->
-      <input type="checkbox" v-model="item.checked">
-      <span :class="{'line-through': item.checked}">{{ item.text }}</span>
+      <input type="checkbox" v-model="item.checked" />
+      <span :class="{ 'line-through': item.checked }">{{ item.text }}</span>
     </div>
     <!-- checked 개수 --><!-- 전체 개수 -->
-    <p>{{ checkedCount.length }} / {{ items.length }} </p>
+    <p>{{ checkedCount.length }} / {{ items.length }}</p>
   </div>
 </template>
 
@@ -23,8 +23,8 @@ export default defineComponent({
     return {
       items: [
         // 여러 속성을 전달하기 위해 객체를 설정한다.
-        { checked: false, text: '빵사기'},
-        { checked: false, text: '커피사기'},
+        { checked: false, text: '빵사기' },
+        { checked: false, text: '커피사기' },
       ],
       count: 0,
     };
@@ -34,9 +34,9 @@ export default defineComponent({
     checkedCount() {
       // items 를 반복하면서 items[0].checked 값이 true 의 개수를 구한다
       return this.items.filter((item: any) => {
-        return item.checked === true
+        return item.checked === true;
       });
-    }
+    },
   },
 });
 </script>
