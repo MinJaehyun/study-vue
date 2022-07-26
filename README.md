@@ -2,55 +2,54 @@
 
 ## 주의 사항
     * 컨벤션: 카멜케이스
-    * 공식문서 또는 공신력 블로그만 보도록 노력하기
-    * JS, TS, HTML 학습하기
-        - https://typescript-kr.github.io/ (기본내용, 고급 일단 제외)
+    * 공식문서 또는 공신력 블로그만 보도록 하기
+    * JS, TS, HTML 학습
+        - https://typescript-kr.github.io/ (고급 일단 제외)
+
+### 07월 26일
+    1. 5/24 정리
+    2. 
 
 ### 07월 23일
-~~1. arrayMethods - filter, reduce 불필요한 파일 삭제~~
-    3. this - 내용도 노션, 깃헙으로 이동하기
-    4. 05월 17일부터 ~ ?일까지 정리.
+    1. arrayMethods - filter, reduce 불필요한 파일 삭제
+    2. this - 내용도 노션, 깃헙으로 이동
+    3. 05월 17일 정리
 
 ### 06월 05일
     1. 게시판 만들기
 
 ### 06월 02일
-    1. 책 예제 282~302 완료
+    1. 책 학습: 282~302
     2. 다음 주 화요일 this, 게시판 만든거 테스트
-    3. 금일 배운 HTML 이해하기
-    4. quizData.json - 구조 이해하기
+    3. 금일 배운 HTML 이해
+    4. quizData.json - 구조 이해
 
 ### 05월 31일
-    1. 책 예제 258~280 완료
+    1. 책 학습: 258~280 
     
 ### 05월 30일
-    1. 책 예제 241~257 완료 
+    1. 책 학습: 241~257 
 
 ### 05월 28일
-    1. 책 예제 188~240 완료 
+    1. 책 학습: 188~240 
 
 ### 05월 27일
-    1. [진행 중] 책 예제 진행하기
-        - 160~187 완료
+    1. 책 학습: 160~187 
 
 ### 05월 26일
-    1. [진행 중] 책의 예제 진행하기
-        - 140~159 완료
+    1. 책 학습: 140~159 
 
 ### 05월 25일
-    1. [진행 중] 책의 예제 html 아닌 vue 로 만들고, 이 후 nuxt 로 변환하기
-        - 99~140
+    1. 책 학습: 99~140
 
 ### 05월 24일
-    1. [진행 중] vue 예제 실습 후 Nuxt 로 변경하기 
-        - 18~98page 학습 
-    2. mutations, actions, state, getters 차이점 이해 하는지?
-    3. vuex 왜 쓰는지? 
-        - https://vuex.vuejs.org/ (What is Vuex?)
-    4. vue 와 react 의 대응되는 개념은?
-    5. map 학습하기 (특징: 길이를 동일하게 return 한다)
-        - 그 외 sum, every, include, find, index 추 후 학습하기
-    6. myMixin - ts 설정하기
+    1. 책 학습: 18~98
+    2. mutations, actions, state, getters 차이 이해
+    3. vuex 왜 쓰는지 
+        - https://vuex.vuejs.org/ (What is Vuex)
+    4. map 학습
+        - 그 외 sum, every, include, find, index 추 후 학습
+    5. myMixin - ts 설정하기
 
 ### 05월 23일
     1. vue, vuex 기본 개념 학습
@@ -99,5 +98,5 @@
     3. typescript 관련 내용 학습하기
         - 핸드북 참고하기
         - typescript 관련 내용 검색하기
-~~4. [v] source tree 사용법 숙지~~
-    ~~- add, commit, push, branch, merge~~
+    4. [v] source tree 사용법 숙지
+        - add, commit, push, branch, merge

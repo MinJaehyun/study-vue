@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/src/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <p style="color: #E80;">직접 색 지정</p>
+  <p :style="{ color: myColor }">v-bind 로 색 지정</p>
+  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+  <p style="font-size: 200%">직접 글자 크기 지정</p>
+  <p :style="{fontSize: mySize}">v-bind 로 크기 지정</p>
+  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+  <p style="backgroundColor: red;">직접 배경색 지정</p>
+  <p :style="{ backgroundColor: myBackColor }">v-bind 로 배경색 지정</p>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    myColor: '#E08000',
+    mySize: '200%',
+    myBackColor: 'aqua',
+  },
+})
+</script>
+</body>
+</html>
+<!-- style 방식 
+  1. style="background-color" , 하이픈 적용하는 케밥(꼬챙이)케이스 사용한다
+  2. style="backgroundColor" ,  카멜케이스 사용하면 경고 뜨지만 적용된다
+  즉, 간편하게 style 는 하이픈 설정하고,
+-->
+
+<!-- :style 방식 
+  1. :style="{ backgroundColor: ...}" , {} 중괄호 없으면 에러난다
+  2. :style 는 카멜케이스만 사용가능하다
+-->

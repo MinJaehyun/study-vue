@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/src/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+
+  <!-- 1 -->
+  <input type="text" v-model="myName">
+  <p>나는 {{ myName }} 입니다.</p>
+  <p>{{ myName.length }}</p>
+  <hr>
+
+  <!-- 2 -->
+  <input type="checkbox" value="testValue" v-model="myCheck" />
+  <p>체크박스 상태는 {{ myCheck }} 입니다</p>
+  <hr>
+
+  <!-- 3 -->
+  <!-- check 된 value 값을 [] 에 담을 수 있다 -->
+  <div>
+    <label><input type="checkbox" v-model="myChecks" value="red">적</label>
+    <label><input type="checkbox" v-model="myChecks" value="green">녹</label>
+    <label><input type="checkbox" v-model="myChecks" value="blue">청</label><br>
+    선택한 색은 {{ myChecks }} 입니다.
+  </div>
+  <hr>
+
+  <!-- 4 -->
+  <!-- 버튼 비활성화 -->
+  <input type="checkbox" v-model="myAgree">
+  <button :disabled="myAgree===false">송신</button>
+  <hr>
+
+  <!-- 5 -->
+  <label><input type="radio" value="red" v-model="picked">적</label>
+  <label><input type="radio" value="green" v-model="picked">녹</label>
+  <label><input type="radio" value="blue" v-model="picked">청</label><br>
+  <div :style="{color: changeColor}">{{ picked }} 이 선택됨</div>
+  <hr>
+
+  <!-- 6 -->
+  <!-- 체크한 이미지를 나타내는 방법 -->
+  <label><input type="radio" value="face1.jpg" v-model="fileName">face1</label>
+  <label><input type="radio" value="face2.jpg" v-model="fileName">face2</label>
+  <img :src="fileName" alt="" >
+
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    // 1
+    myName: '',
+
+    // 2
+    myCheck: '',
+    // 초기값이 boolean 이거나 '' 이면, 체크 선택 시 boolean 이 담긴다.
+    // 초기값이 [] 이면 value='testValue' 설정이면 testValue 값이 지정된다.
+
+    // 3
+    myChecks: [],
+
+    // 4
+    myAgree: false,
+
+    // 5
+    picked: 'red',
+
+    // 6
+    fileName: '',
+  },
+
+  // 5
+  computed: {
+    // 목표: 빨강 -> 초록, 파랑 -> 빨강, 초록 -> 파랑
+    changeColor: function() {
+      let color;
+      if(this.picked === 'red') color = 'green';
+      else if(this.picked === 'blue') color = 'red';
+      else color = 'blue';
+      return color;
+    },
+  },
+})
+</script>
+</body>
+</html>
+
+<!-- 2. input type="checkbox" 의 boolean data
+  체크 유무에 따라 true / false 값을 갖기 위해서는, v-model 의 data 가 boolean 값이여야 한다.
+-->
+<!-- 3. input type="checkbox" 의 array data
+  체크한 요소는 value 값에 설정한 내용을 array[] 에 담을 수 있다. 
+-->
+
+<!-- 4. 버튼 비활성화 
+  1. false 이므로 disabled 상태이다. 체크하면 true 이며 아래조건을 만족하지 않으므로 버튼이 활성화 된다
+  2. myAgree===false 는 !myAgree 와 같다.
+-->
+
+<!-- 
+  1. 여러 가지 선택: checkbox 사용, 
+  2. 한 가지만 선택: radio 사용. 
+-->
+
+<!-- :style="{color: 데이터값 or computed 함수 or methods 가져올 수 있다}" -->
