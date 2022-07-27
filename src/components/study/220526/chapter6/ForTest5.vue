@@ -7,8 +7,10 @@
       </button>
     </div>
     <div><button @click="testObj(3, 0, '추가')">네 번째에 추가</button></div>
-    <div><button @click="testObj(0, 1, '변경')">첫 번째를 변경</button></div>
-    <div><button @click="testObj(1, 1)">두 번째를 삭제</button></div>
+    <div>
+      <button @click="testObj(0, 1, '첫 번째 변경')">첫 번째를 변경</button>
+    </div>
+    <div><button @click="testObj(1, 1)">두 번째 삭제</button></div>
   </div>
 </template>
 
@@ -16,15 +18,16 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'fortest5_',
+  name: 'for-test5',
   data() {
     return {
       myArr: ['첫번째', '두번째', '세번째', '네번째'],
+      myArr2: ['첫', '두', '세', '네'],
     };
   },
   methods: {
-    // 하단의 메서드를 하나로 통합하여 사용
-    testObj(index: any, deleteCount: any, addText?: any) {
+    // 하단의 메서드를 하나로 통합하는 방법
+    testObj(index: number, deleteCount: number, addText?: string) {
       if (typeof addText !== 'undefined') {
         this.myArr.splice(index, deleteCount, addText);
       } else {
@@ -46,9 +49,10 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped></style>
-<!--
-1. splice(index, deleteCount, '입력할 내용')
-2. splice(1,1) 는 2번째 인덱스를 1개 삭제한다.
+<!-- vue 에서 arr[0]=100 으로 변경하는 대신 splice 사용하여 변경하는 이유? -->
+<!-- splice 4가지 사용법
+  1. 끝에 추가  : splice(index)
+  2. 중간에 추가: splice(index, 0, '추가 데이터')
+  3. 중간에 삭제: splice(index, 1)
+  4. 중간에 변경: splice(index, 1, '변경 데이터')
 -->

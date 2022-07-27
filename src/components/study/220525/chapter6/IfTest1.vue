@@ -5,9 +5,7 @@
       표시
     </label>
     <p v-if="myVisible">체크박스 ON</p>
-    <p v-else :style="{ display: noneDisplay }">
-      체크박스를 noneDisplay 처리함!
-    </p>
+    <p v-else :style="{ display: noneDisplay }">체크박스를 noneDisplay 처리</p>
   </div>
 </template>
 
@@ -28,6 +26,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped></style>
-<!-- checkbox 는 최초 fasle 상태이고, 선택 시 true 로 변경된다. -->
