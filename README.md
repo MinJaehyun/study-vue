@@ -6,9 +6,11 @@
     * JS, TS, HTML 학습
         - https://typescript-kr.github.io/ (고급 일단 제외)
 
+### 07월 27일
+    1. 5/25 정리
+
 ### 07월 26일
-    1. 5/24 정리
-    2. 
+    1. 5/24 정리    
 
 ### 07월 23일
     1. arrayMethods - filter, reduce 불필요한 파일 삭제

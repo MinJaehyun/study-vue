@@ -6,13 +6,13 @@ import TodoInput from '@/pages/TodoInputPage.vue';
 import TodoPage from '@/pages/TodoPage.vue';
 import Mixin from '@/components/study/mixin/test.vue';
 import Vuex from '@/components/study/vuex/test.vue';
-import ModelTest from '@/components/study/220525/ModelTest.vue';
-import ModelTest9 from '@/components/study/220525/ModelTest9.vue';
-import ModelTest10 from '@/components/study/220525/ModelTest10~11.vue';
-import Chapter4Test from '@/components/study/220525/Chapter4Test.vue';
-import OneTest2 from '@/components/study/220525/OneTest2.vue';
-import OneTest3 from '@/components/study/220525/OneTest3~4.vue';
-import Test from '@/components/study/220525/test.vue';
+import ModelTest8 from '@/components/study/220525/chapter4/ModelTest8.vue';
+import ModelTest9 from '@/components/study/220525/chapter4/ModelTest9.vue';
+import ModelTest10 from '@/components/study/220525/chapter4/ModelTest10~11.vue';
+import Chapter4Test from '@/components/study/220525/chapter4/Chapter4Test.vue';
+import OneTest2 from '@/components/study/220525/chapter5/OneTest2.vue';
+import OneTest3 from '@/components/study/220525/chapter5/OneTest3~4.vue';
+import Chapter5test from '@/components/study/220525/chapter5/Chapter5test.vue';
 import IfTest1 from '@/components/study/220525/IfTest1.vue';
 import ForeTest1 from '@/components/study/220525/ForTest1.vue';
 import ForTest3 from '@/components/study/220526/ForTest3.vue';
@@ -166,8 +166,8 @@ const routes: any = [
     component: IfTest1,
   },
   {
-    path: '/test',
-    component: Test,
+    path: '/chapter5test',
+    component: Chapter5test,
   },
   {
     path: '/onetest3~4',
@@ -190,8 +190,8 @@ const routes: any = [
     component: ModelTest9,
   },
   {
-    path: '/ModelTest',
-    component: ModelTest,
+    path: '/ModelTest8',
+    component: ModelTest8,
   },
   {
     path: '/vuex',
