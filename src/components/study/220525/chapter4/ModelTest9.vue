@@ -1,6 +1,7 @@
 <template>
   <div>
-    <select v-model="myColor" multiple style="width: 300px">
+    <select v-model="myColor" style="width: 300px" multiple>
+      <!-- <option disabled value="">select color</option> , []에는 사용불가-->
       <option>red</option>
       <option>green</option>
       <option>blue</option>
@@ -21,6 +22,4 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped></style>
-<!-- select option 에 mutiple 속성은 shift+클릭하여 다중 선택해야 한다 -->
+<!-- multiple 속성은 shift + 클릭하여 다중 선택해야 한다 -->
