@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>각각의 버튼 클릭 시, 해당 값을 증가 시키는 예제</h1>
+    <h1>버튼 클릭 시 매개변수 값 증가 시키는 예제</h1>
     <p>{{ count }}</p>
     <button @click="countUp(3)">3증가</button>
     <button @click="countUp(10)">10증가</button>
@@ -23,7 +23,7 @@ export default defineComponent({
     };
   },
   methods: {
-    countUp(val: any) {
+    countUp(val: number) {
       this.count += val;
     },
     showAlert() {
@@ -34,4 +34,9 @@ export default defineComponent({
 </script>
 
 <style scoped></style>
-<!-- 이벤트 함수에 인자를 넣어 전달할 수 있다. -->
+<!-- 이벤트 함수에 인자 넣는 기능 -->
+
+<!-- 키 입력 이벤트인 @keyup 의 키 수식자 종류와 시스템 수식자 키의 종류 
+  1. 키 수식자: enter, down, tab, esc 등등
+  2. 시스템 수식자 키: ctrl, alt, shift, window키, command키
+-->
