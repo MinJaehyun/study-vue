@@ -1,7 +1,7 @@
 <template>
   <div>
-    <input type="number" v-model="price" />원 *
-    <input type="number" v-model="count" />개
+    <input type="number" v-model.number="price" />원 x
+    <input type="number" v-model.number="count" />개
   </div>
   <p>합계: {{ sumPrice }}</p>
   <p>세금포함: {{ taxIncluded }}</p>
@@ -18,7 +18,6 @@ export default defineComponent({
       count: 0,
     };
   },
-  methods: {},
   computed: {
     sumPrice() {
       return this.price * this.count;
@@ -29,6 +28,4 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped></style>
-<!-- input type number 지정하면 화살표로 가격 조절할 수 있다 -->
+<!-- input type number 지정하면 화살표로 가격 조절할 수 있고, 숫자만 입력받는다 -->

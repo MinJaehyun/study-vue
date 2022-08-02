@@ -20,12 +20,11 @@ import TableTest from '@/components/study/220526/chapter6/TableTest.vue';
 import ForTest5 from '@/components/study/220526/chapter6/ForTest5.vue';
 import ForTest6 from '@/components/study/220526/chapter6/ForTest6.vue';
 import ForTest7 from '@/components/study/220526/chapter6/ForTest7.vue';
-import Chapter6Test from '@/components/study/220527/Chapter6Test.vue';
-import ComputedTest2 from '@/components/study/220527/ComputedTest2.vue';
-import ComputedTest3 from '@/components/study/220527/ComputedTest3.vue';
-import ComputedTest4 from '@/components/study/220527/ComputedTest4.vue';
-import ReComputedTest4 from '@/components/study/220527/ReComputedTest4.vue';
-import ComputedTest5 from '@/components/study/220527/ComputedTest5.vue';
+import Chapter6Test from '@/components/study/220526/chapter6/Chapter6Test.vue';
+import ComputedTest2 from '@/components/study/220527/chapter8/ComputedTest2.vue';
+import ComputedTest3 from '@/components/study/220527/chapter8/ComputedTest3.vue';
+import ComputedTest4 from '@/components/study/220527/chapter8/ComputedTest4.vue';
+import ComputedTest5 from '@/components/study/220527/chapter8/ComputedTest5.vue';
 import WatchTest1 from '@/components/study/220528/WatchTest1.vue';
 import WatchTest2 from '@/components/study/220528/WatchTest2.vue';
 import TransTest1 from '@/components/study/220528/TransTest1.vue';
@@ -116,10 +115,6 @@ const routes: any = [
   {
     path: '/computedtest5',
     component: ComputedTest5,
-  },
-  {
-    path: '/recomputedtest4',
-    component: ReComputedTest4,
   },
   {
     path: '/computedtest4',
