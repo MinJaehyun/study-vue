@@ -20,7 +20,7 @@ export default defineComponent({
   methods: {
     startTimer() {
       if (this.setTime > 1) {
-        // 특징: setInterval 처리한 변수를 clearInterval 함수에서 처리하기 위해 객체에 담는다
+        // setInterval 처리한 변수를(timeNum) clearInterval 함수에서 처리하기 위해 객체에 담는다
         this.timeNum = setInterval(() => {
           this.setTime -= 1;
         }, 1000);
@@ -39,17 +39,14 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped></style>
-<!--
-1. 참고: https://ko.javascript.info/settimeout-setinterval
-2. setTimeout, setInterval, clearInterval 개념 이해하기
-3. 질문: 28라인 콘솔 3 나오는 이유ㅎ?
-- 반환 값: 반환 intervalID된 값은 호출에 의해 생성된 타이머를 식별하는 0이 아닌 숫자 값ㅇ다.
+<!-- 학습 목표: 
+  1. setTimeout, setInterval, clearInterval 개념 이해
+  2. 질문: 28: 결과 3 인 이유는?
+    - 반환 intervalID된 값은 호출에 의해 생성된 타이머를 식별하는 0이 아닌 숫자 값.
 -->
 
 <!-- 흐름:
-1. data 에 기본값 설정하고, watch 에서 기본값을 가져와서 감시할 것이다
-2. start 버튼 클릭 시, 메서드를 호출하여 반복 실행되는 setInterval 함수로 시간을 1초씩 감소할 것이다.
-3. 이 후, 시간이 0 일 경우(-1 초 감소인 경우) 중단을 실행하기 위해 watch 함수에 시간 변수를 건다.
+  1. data 값을 watch 에서 가져와 감시할 것이다
+  2. start 클릭 시, startTimer 메서드 호출하여 setInterval 로 1초씩 감소할 것이다
+  3. 시간이 0 이면 중단하기 위해 watch 함수에 clearInterval 함수를 사용한다
 -->
