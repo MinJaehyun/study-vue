@@ -3,7 +3,7 @@ import { createWebHistory, createRouter, RouterOptions } from 'vue-router';
 
 import PageNotFound from '@/pages/PageNotFound.vue';
 import TodoInput from '@/pages/TodoInputPage.vue';
-import TodoPage from '@/pages/TodoPage.vue';
+import DynamicRoute from '@/pages/DynamicRoute.vue';
 import Mixin from '@/components/study/mixin/test.vue';
 import Vuex from '@/components/study/vuex/test.vue';
 import ModelTest8 from '@/components/chapter4/ModelTest8.vue';
@@ -39,11 +39,11 @@ import TodoList1New from '@/components/chapter11/TodoList1New.vue';
 import TodoList2New from '@/components/chapter11/TodoList2New.vue';
 import TestTodoList from '@/components/chapter11/TestTodoList.vue';
 
-import CompTest1 from '@/components/study/220531/CompTest1.vue';
-import Chapter12 from '@/components/study/220531/Chapter12.vue';
-import JsonLoadVue from '@/components/study/220602/JsonLoadVue.vue';
-import JsonTest1 from '@/components/study/220602/JsonTest1.vue';
-import OxQuiz from '@/components/study/220602/OxQuiz.vue';
+import CompTest1 from '@/components/chapter12/CompTest1.vue';
+import Chapter12 from '@/components/chapter12/Chapter12.vue';
+import JsonLoadVue from '@/components/study/220602/chapter13/JsonLoadVue.vue';
+import JsonTest1 from '@/components/study/220602/chapter13/JsonTest1.vue';
+import OxQuiz from '@/components/study/220602/chapter13/OxQuiz.vue';
 import EasyBoardPage from '@/pages/EasyBoardPage.vue';
 
 // routes 설정
@@ -215,7 +215,7 @@ const routes: any = [
   {
     path: '/todo/:id',
     name: 'todo',
-    component: TodoPage,
+    component: DynamicRoute,
   },
   {
     path: '/todoinput',

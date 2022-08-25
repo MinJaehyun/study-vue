@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import OddAndEven from '@/components/study/220531/OddAndEven.vue';
+import OddAndEven from '@/components/chapter12/OddAndEven.vue';
 
 export default defineComponent({
   name: 'Chapter12_',
@@ -20,21 +20,13 @@ export default defineComponent({
       numberList: [1, 2, 3, 4],
     };
   },
-  methods: {},
   components: {
-    // eslint-disable-next-line vue/no-unused-components
     OddAndEven,
   },
 });
 </script>
-
-<style scoped></style>
 <!-- 부모
-1. 데이터 만들고
-2. 컴포넌트 설정해서
-3. 바인딩으로 데이터 내려준다
--->
-
-<!-- 자식
-1.
+  1. 데이터 만들고
+  2. 컴포넌트 설정해서
+  3. v-for 의 각 데이터를 바인딩으로 내려준다
 -->
