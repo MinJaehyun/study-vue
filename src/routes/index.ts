@@ -1,6 +1,6 @@
 // vue-router 라이브러리 { createWebHistory, createRouter } 사용
 import { createWebHistory, createRouter, RouterOptions } from 'vue-router';
-import TodoList from '@/pages/TodoList.vue';
+
 import PageNotFound from '@/pages/PageNotFound.vue';
 import TodoInput from '@/pages/TodoInputPage.vue';
 import TodoPage from '@/pages/TodoPage.vue';
@@ -37,8 +37,8 @@ import TransTest3 from '@/components/chapter10/TransTest3.vue';
 import Chapter10 from '@/components/study/220530/chapter10/Chapter10.vue';
 import TodoList1New from '@/components/chapter11/TodoList1New.vue';
 import TodoList2New from '@/components/chapter11/TodoList2New.vue';
+import TestTodoList from '@/components/chapter11/TestTodoList.vue';
 
-import TestTodoList from '@/components/study/220531/TestTodoList.vue';
 import CompTest1 from '@/components/study/220531/CompTest1.vue';
 import Chapter12 from '@/components/study/220531/Chapter12.vue';
 import JsonLoadVue from '@/components/study/220602/JsonLoadVue.vue';
@@ -220,10 +220,6 @@ const routes: any = [
   {
     path: '/todoinput',
     component: TodoInput,
-  },
-  {
-    path: '/todolist',
-    component: TodoList,
   },
   {
     path: '/:anything(.*)',
