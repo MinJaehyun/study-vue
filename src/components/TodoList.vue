@@ -42,10 +42,8 @@ export default {
       addText: '',
     };
   },
-  // 체크된 길이를 연산하여 return
   computed: {
-    remaining: function () {
-      // todo.done 값이 true 이면 길이를 return
+    remaining() {
       return this.todos.filter(value => {
         return value.done == true;
       }).length;
