@@ -42,12 +42,11 @@ import CompTest1 from '@/components/chapter12/CompTest1.vue';
 import Chapter12 from '@/components/chapter12/Chapter12.vue';
 import JsonLoadVue from '@/components/chapter13/JsonLoadVue.vue';
 import JsonTest1 from '@/components/chapter13/JsonTest1.vue';
-import OxQuiz from '@/components/chapter13/OxQuiz.vue';
 import OXQuiz from '@/components/chapter13/test/OXQuiz.vue';
 import EasyBoardPage from '@/pages/EasyBoardPage.vue';
 
 // routes 설정
-const routes: any = [
+const routes = [
   {
     path: '/easyboard',
     component: EasyBoardPage,
@@ -55,10 +54,6 @@ const routes: any = [
   {
     path: '/ox-quiz',
     component: OXQuiz,
-  },
-  {
-    path: '/oxquiz',
-    component: OxQuiz,
   },
   {
     path: '/jsontest1',
