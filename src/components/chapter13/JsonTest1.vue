@@ -26,13 +26,10 @@ export default defineComponent({
   methods: {
     shuffleData() {
       this.loadData.sort(() => Math.random() - 0.5);
-      // console.log(Math.random());
     },
     sortFunction() {
       // 오름차순 정렬
       this.loadData.sort((a: any, b: any) => {
-        // console.log(a.title);
-        console.log(a);
         return a.title > b.title ? 1 : -1;
       });
     },
@@ -45,7 +42,6 @@ export default defineComponent({
         reader.onload = e => {
           let json = JSON.parse(e.target?.result as string);
           vm.loadData = json;
-          // console.log(vm);
         };
         reader.readAsText(file as any);
       }
@@ -53,5 +49,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped></style>

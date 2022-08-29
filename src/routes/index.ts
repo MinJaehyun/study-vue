@@ -10,40 +10,40 @@ import ModelTest8 from '@/components/chapter4/ModelTest8.vue';
 import ModelTest9 from '@/components/chapter4/ModelTest9.vue';
 import ModelTest10 from '@/components/chapter4/ModelTest10~11.vue';
 import Chapter4Test from '@/components/chapter4/Chapter4Test.vue';
-import OneTest2 from '@/components/study/220525/chapter5/OneTest2.vue';
-import OneTest3 from '@/components/study/220525/chapter5/OneTest3~4.vue';
-import Chapter5test from '@/components/study/220525/chapter5/Chapter5test.vue';
-import IfTest1 from '@/components/study/220525/chapter6/IfTest1.vue';
-import ForeTest1 from '@/components/study/220525/chapter6/ForTest1.vue';
+import OneTest2 from '@/components/chapter5/OneTest2.vue';
+import OneTest3 from '@/components/chapter5/OneTest3~4.vue';
+import Chapter5test from '@/components/chapter5/Chapter5test.vue';
+import IfTest1 from '@/components/chapter6/IfTest1.vue';
+import ForeTest1 from '@/components/chapter6/ForTest1.vue';
 import ForTest3 from '@/components/chapter6/ForTest3.vue';
 import TableTest from '@/components/chapter6/TableTest.vue';
 import ForTest5 from '@/components/chapter6/ForTest5.vue';
 import ForTest6 from '@/components/chapter6/ForTest6.vue';
 import ForTest7 from '@/components/chapter6/ForTest7.vue';
 import Chapter6Test from '@/components/chapter6/Chapter6Test.vue';
-import ComputedTest2 from '@/components/study/220527/chapter8/ComputedTest2.vue';
-import ComputedTest3 from '@/components/study/220527/chapter8/ComputedTest3.vue';
-import ComputedTest4 from '@/components/study/220527/chapter8/ComputedTest4.vue';
-import ComputedTest5 from '@/components/study/220527/chapter8/ComputedTest5.vue';
-import WatchTest1 from '@/components/study/220528/chapter8-2/WatchTest1.vue';
-import TimerTest from '@/components/study/220528/chapter8-2/TimerTest.vue';
-import WatchTest2 from '@/components/study/220528/chapter8-2/WatchTest2.vue';
-import Practice82 from '@/components/study/220528/chapter8-2/Practice82.vue';
-import Markdown from '@/components/study/220528/chapter9/Markdown.vue';
+import ComputedTest2 from '@/components/chapter8/ComputedTest2.vue';
+import ComputedTest3 from '@/components/chapter8/ComputedTest3.vue';
+import ComputedTest4 from '@/components/chapter8/ComputedTest4.vue';
+import ComputedTest5 from '@/components/chapter8/ComputedTest5.vue';
+import WatchTest1 from '@/components/chapter8-2/WatchTest1.vue';
+import TimerTest from '@/components/chapter8-2/TimerTest.vue';
+import WatchTest2 from '@/components/chapter8-2/WatchTest2.vue';
+import Practice82 from '@/components/chapter8-2/Practice82.vue';
+import Markdown from '@/components/chapter9/Markdown.vue';
 import TransTest1 from '@/components/chapter10/TransTest1.vue';
 import TransTest2 from '@/components/chapter10/TransTest2.vue';
 import ShuffleTest from '@/components/chapter10/ShuffleTest.vue';
 import TransTest3 from '@/components/chapter10/TransTest3.vue';
-import Chapter10 from '@/components/study/220530/chapter10/Chapter10.vue';
+import Chapter10 from '@/components/chapter10/Chapter10.vue';
 import TodoList1New from '@/components/chapter11/TodoList1New.vue';
 import TodoList2New from '@/components/chapter11/TodoList2New.vue';
 import TestTodoList from '@/components/chapter11/TestTodoList.vue';
-
 import CompTest1 from '@/components/chapter12/CompTest1.vue';
 import Chapter12 from '@/components/chapter12/Chapter12.vue';
-import JsonLoadVue from '@/components/study/220602/chapter13/JsonLoadVue.vue';
-import JsonTest1 from '@/components/study/220602/chapter13/JsonTest1.vue';
-import OxQuiz from '@/components/study/220602/chapter13/OxQuiz.vue';
+import JsonLoadVue from '@/components/chapter13/JsonLoadVue.vue';
+import JsonTest1 from '@/components/chapter13/JsonTest1.vue';
+import OxQuiz from '@/components/chapter13/OxQuiz.vue';
+import OXQuiz from '@/components/chapter13/test/OXQuiz.vue';
 import EasyBoardPage from '@/pages/EasyBoardPage.vue';
 
 // routes 설정
@@ -51,6 +51,10 @@ const routes: any = [
   {
     path: '/easyboard',
     component: EasyBoardPage,
+  },
+  {
+    path: '/ox-quiz',
+    component: OXQuiz,
   },
   {
     path: '/oxquiz',
