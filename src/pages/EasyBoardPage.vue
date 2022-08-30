@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import EasyBoard from '@/components/study/220605/EasyBoard.vue';
+import EasyBoard from '@/components/chapter14/EasyBoard.vue';
 
 export default defineComponent({
   name: 'EasyBoardPage',
