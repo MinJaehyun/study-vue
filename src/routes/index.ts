@@ -44,9 +44,14 @@ import JsonLoadVue from '@/components/chapter13/JsonLoadVue.vue';
 import JsonTest1 from '@/components/chapter13/JsonTest1.vue';
 import OXQuiz from '@/components/chapter13/test/OXQuiz.vue';
 import EasyBoardPage from '@/pages/EasyBoardPage.vue';
+import EasyBoardPage2 from '@/pages/220830/EasyBoardPage2.vue';
 
 // routes 설정
 const routes = [
+  {
+    path: '/easy-board2',
+    component: EasyBoardPage2,
+  },
   {
     path: '/easyboard',
     component: EasyBoardPage,
