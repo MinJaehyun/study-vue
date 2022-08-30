@@ -1,0 +1,40 @@
+{
+  "board": [
+    {
+      "no": "1",
+      "title": "first post",
+      "content": "first post",
+      "view": "1"
+    },
+    {
+      "no": "2",
+      "title": "second post",
+      "content": "second post",
+      "view": "1"
+    },
+    {
+      "no": "3",
+      "title": "3 post",
+      "content": "3 post",
+      "view": "1"
+    },
+    {
+      "no": "4",
+      "title": "4 post",
+      "content": "4 post",
+      "view": "1"
+    },
+    {
+      "no": "5",
+      "title": "5 post",
+      "content": "5 post",
+      "view": "1"
+    },
+    {
+      "no": "6",
+      "title": "6 post",
+      "content": "6 post",
+      "view": "1"
+    }
+  ]
+}

@@ -21,9 +21,9 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'WriteBoard',
-  props: {
-    writeBool: Boolean,
-  },
+  // props: {
+  //   writeBool: Boolean,
+  // },
   methods: {
     setInputText(e: any) {
       this.$emit('inputTitle', e.target.value);
@@ -37,5 +37,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped></style>

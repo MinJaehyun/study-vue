@@ -1,11 +1,10 @@
 <template>
   <div>
-    <h1>간단한 게시판</h1>
-    <p>게시판 데이터 json 파일 읽기</p>
+    <h1>간단 게시판</h1>
     <input type="file" class="inputFile" @change="onChangeFileReader" />
-    <button @click="onClickSaveList">게시판 저장하기</button>
+    <button @click="onClickSaveList">게시판 저장</button>
 
-    <!-- loadData 있으면 table 구조 보여주기 -->
+    <!-- TableListBoard -->
     <TableListBoard
       v-if="mode === 'read'"
       @onClickDetailBoard="onClickDetailBoard"
@@ -39,19 +38,15 @@ import WriteBoard from '@/components/chapter14/WriteBoard.vue';
 import DetailBoard from '@/components/chapter14/DetailBoard.vue';
 
 interface testObj {
-  // 인터페이스 참고하기
-  id: string; // id? 설정하면, 아래 testObj 의 id 는 없어도 된다(option)
+  id: string;
   title: string;
   content: string;
   searchCount: string;
 }
 interface dataObj {
-  loadBoardData: { content: string; title: string; searchCount: string }[]; // ts 배열 참고하기
-  testObj: {
-    // testObj 의 각각의 속성의 타입을 명시할 수 있다.
-    content: string;
-    title: string;
-  };
+  // NOTE: [] 안에 {} 안에 속성들을 나타내는 방법
+  loadBoardData: { title: string; content: string; searchCount: string }[];
+  testObj: { title: string; content: string };
   inputTitle: string;
   inputTextarea: string;
   mode: string;
@@ -59,8 +54,8 @@ interface dataObj {
 
 export default defineComponent({
   name: 'EasyBoard',
+  // NOTE: 함수에 타입 명시하기
   data(): dataObj {
-    // 함수 뒤 ts 는 return 타입을 명시한다.
     return {
       loadBoardData: [
         {
@@ -79,14 +74,14 @@ export default defineComponent({
     };
   },
   components: {
+    DetailBoard,
     TableListBoard,
     WriteBoard,
-    DetailBoard,
   },
   computed: {
     initializedWrite(): testObj {
       return {
-        id: `${this.loadBoardData.length + 1}`, // id 는 문자열이므로 선언은 stirng 으로 한다
+        id: `${this.loadBoardData.length + 1}`, // id 는 문자열로 선언
         title: this.testObj.title,
         content: this.testObj.content,
         searchCount: '',
@@ -100,15 +95,15 @@ export default defineComponent({
     eventInputTextarea(data: string): string {
       return (this.testObj.content = data);
     },
-    // 리스트 저장하기
+    // 리스트 저장
     onClickSaveList(): undefined {
-      let data: string = '' as string; // NOTE: 이 부분 학습하기!!
+      let data: string = '' as string;
+      let filename = 'src/assets/data/board.json';
+
       if (this.loadBoardData.length === 0) return;
-      let filename = 'src/assets/data/220605/board.json';
       if (typeof data === 'object') {
-        // 위에 string 설정하였으므로 여기서 타입체크 불필요하다.
         data = JSON.stringify(data, undefined, 2);
-        // 위 data 는 문자열이 아니여야 한다. 이 뜻은 JSON.stringify(data, undefined, 2) 이 문자열이 아니여야 한다는 의미이다.
+        // 위 data 는 문자열이 아니여야 한다
         // console.log(data) // json 문자열
       }
       let blob = new Blob([data], { type: 'application/json' });
@@ -166,9 +161,9 @@ export default defineComponent({
       if (file) {
         let reader = new FileReader();
         // let vm = this;
-        // this 를 화살표 함수에서 사용하면 전역 객체로 바인딩한다.
+        // NOTE: this 를 화살표 함수에서 사용하면 전역 객체로 바인딩한다.
         reader.onload = e => {
-          let json = JSON.parse(e.target?.result as string);
+          let json = JSON.parse(e.target.result as string);
           this.loadBoardData = json.board[0];
           this.mode = 'read';
         };

@@ -53,7 +53,7 @@ const routes = [
     component: EasyBoardPage2,
   },
   {
-    path: '/easyboard',
+    path: '/easy-board',
     component: EasyBoardPage,
   },
   {
