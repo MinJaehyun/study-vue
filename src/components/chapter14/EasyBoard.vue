@@ -34,9 +34,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TableListBoard from '@/components/study/220605/TableListBoard.vue';
-import WriteBoard from '@/components/study/220605/WriteBoard.vue';
-import DetailBoard from '@/components/study/220605/DetailBoard.vue';
+import TableListBoard from '@/components/chapter14/TableListBoard.vue';
+import WriteBoard from '@/components/chapter14/WriteBoard.vue';
+import DetailBoard from '@/components/chapter14/DetailBoard.vue';
 
 interface testObj {
   // 인터페이스 참고하기
